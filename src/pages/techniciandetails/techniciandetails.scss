@@ -1,0 +1,90 @@
+page-techniciandetails {
+    ion-content {
+        margin-top: 0px !important;
+        padding-top: 0px !important;
+        top: 0px !important;
+        .scroll-content {
+            margin-top: 0px !important;
+            padding-top: 20px !important;
+        }
+        .proxima_font {
+            font-family: 'proximanova';
+        }
+    }
+    ion-navbar {
+        border: none !important;
+    }
+    button.bar-button.bar-button-md.bar-button-default.bar-button-default-md {
+        height: 8px;
+        width: 30px;
+    }
+    span.button-inner {
+        height: 8px;
+    }
+    .profile-details {
+        width: 100%;
+        .pic {
+            height: 60px;
+            width: 60px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .img1 {
+            position: relative;
+            z-index: 1;
+            border: 0px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .img2 {
+            position: relative;
+            z-index: 2;
+            top: -17px;
+            left: 5px;
+        }
+        button.remove-tech-button {
+            z-index: 3;
+            width: 170px;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 5px;
+            position: absolute;
+            top: -15px;
+            right: -200%;
+            border-color: map-get($colors, aiit_light_gray);
+            border-style: solid;
+            border-width: 1px;
+            background-color: white;
+            color: map-get($colors, aiit_light_gray);
+            padding: 10px;
+        }
+        .details {
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            .empid {
+                font-size: 13px;
+                color: map-get($colors, aiit_light_gray);
+            }
+        }
+    }
+    .shift {
+        width: 70%;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        color: gray;
+        font-size: 13px;
+        font-style: "ProximaNova-Regular";
+    }
+    .trashIcon {
+        margin-right: 10px;
+    }
+
+    .body{
+        font-family: 'proximanova';
+        color: map-get($colors, aiit_light_gray);
+    }
+}

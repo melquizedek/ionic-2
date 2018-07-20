@@ -1,0 +1,51 @@
+<ion-header no-border no-shadow>
+
+  <ion-navbar no-border-bottom transparent>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>SERVICE REPORTS</ion-title>
+  </ion-navbar>
+
+  <div class="aiit-div-segment-root">
+    <ion-segment [(ngModel)]="status">
+      <ion-segment-button class="aiit-segment-nav" value="Review">
+        FOR REVIEW
+        <span class="badge"> 5 </span>
+      </ion-segment-button>
+      <ion-segment-button class="aiit-segment-nav" value="Approved">
+        APPROVED
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div [ngSwitch]="status">
+    <ion-list *ngSwitchCase="'Review'">
+      <ion-item class="task-list-item" *ngFor="let reviewReport of reviewReport; let i = index" (click)="taskSelected(reviewReport)">
+        <p class="task-list-date">{{ reviewReport.TIMESTAMP }}</p>
+        <p class="task-list-title">{{ reviewReport.TITLE }}</p>
+        <p class="common-list-item-subtitle">{{ reviewReport.PERSON_NAME }}</p>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'Approved'">
+      <ion-item class="task-list-item" *ngFor="let approvedReport of approvedReport; let i = index" (click)="taskSelected(approvedReport)">
+        <p class="task-list-date">{{ approvedReport.TIMESTAMP }}</p>
+        <p class="task-list-title"> {{ approvedReport.TITLE }} </p>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="status == 'Review' && !reviewReport.length" class="empty-state">
+    No service reports found.
+  </div>
+
+  <div *ngIf="status == 'Approved' && !approvedReport.length" class="empty-state">
+    <p>No service reports found.<br /><br />
+      <button class="common_clear_button_gray_text" type='submit' (click)="viewPendingReports()">View all Pending Reports</button></p>
+  </div>
+
+</ion-content>

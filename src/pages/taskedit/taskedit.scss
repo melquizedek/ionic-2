@@ -1,0 +1,25 @@
+page-taskedit {
+    .add-tech-button {
+        width: 200px;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        border-radius: 5px;
+        position: absolute;
+        right: 20px;
+        border-color: map-get($colors, aiit_light_gray);
+        border-style: solid;
+        border-width: 1px;
+        background-color: map-get($colors, aiit_white);
+        color: map-get($colors, aiit_blue_segment);
+        padding: 10px;
+        font-family: 'proximanova';
+    }
+    .input_date {
+        border: transparent;
+    }
+    .proxima_font {
+        font-family: 'proximanova';
+        white-space: pre-wrap;
+    }
+}

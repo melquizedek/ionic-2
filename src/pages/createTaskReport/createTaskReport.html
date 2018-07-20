@@ -1,0 +1,120 @@
+<!--
+  Generated template for the ManageTask page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border no-shadow>
+  <ion-navbar no-border-bottom transparent>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons right>
+      <button ion-button list (click)="listView()">
+        <ion-icon name="list"></ion-icon>
+      </button>
+      <button ion-button calendar (click)="calendarView()">
+        <ion-icon name="calendar"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Create Task Report</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+    <div>
+    <expandable-list>
+    <expandable-list-item [isExpanded]=false>
+        <span title>Report Header Information</span>
+        <a item><span secondary> 
+            <label class="common_label" class="common_label">Work Order</label>
+            <input class="common_text_field" class="common_text_field" type="text"/>
+        </span>
+        <span secondary> 
+            <label class="common_label">Employee ID</label>
+            <input class="common_text_field" type="text"/>
+        </span>
+        </a>
+        <a item>
+        <span secondary> 
+            <label class="common_label">Dealer Code</label>
+            <input class="common_text_field" type="text"/>
+        </span>
+        </a>
+        <a item>
+        <span secondary> 
+            <label class="common_label">Service Date</label>
+            <input class="common_text_field" type="date"/>
+        </span>
+        </a>
+        <a item>
+        <span secondary> 
+            <label class="common_label">Customer</label>
+            <input class="common_text_field" type="text"/>
+        </span>
+        </a>
+        <a item>
+        <span secondary> 
+            <label class="common_label">Customer Equipment No.</label>
+            <input class="common_text_field" type="text"/>
+        </span>
+        </a>
+        <a item>
+        <span secondary> 
+            <label class="common_label">Manufacturer</label>
+            <input class="common_text_field" type="text"/>
+        </span>
+        </a>
+        <a item>
+        <span secondary> 
+            <label class="common_label">Model</label>
+            <input class="common_text_field" type="text"/>
+        </span>
+        </a>
+        <a item>
+        <span secondary> 
+            <label class="common_label">Serial No.</label>
+            <input class="common_text_field" type="text"/>
+        </span>
+        </a>
+        <a item>
+        <span secondary> 
+            <label class="common_label">SMU</label>
+            <input class="common_text_field" type="text"/>
+        </span>
+        </a>
+        <a item>
+        <span secondary> 
+            <label class="common_label">Equipment Location</label>
+            <input class="common_text_field" type="text"/>
+        </span>
+        </a>
+        <a item>
+        <span secondary> 
+            <label class="common_label">IN Date</label>
+            <input class="common_text_field" type="date"/>
+        </span>
+        </a>
+        <a item>
+        <span secondary> 
+            <label class="common_label">OUT Date</label>
+            <input class="common_text_field" type="date"/>
+        </span>
+        </a>
+        <a item>
+        <span secondary> 
+            <label class="common_label">Promise Date</label>
+            <input class="common_text_field" type="date"/>
+        </span>
+        </a>
+        <a item>
+        <span secondary> 
+            <label class="common_label">Instructions</label>
+            <ion-textarea class="common_text_field" placeholder="Type your message here"></ion-textarea>
+        </span>
+        </a>
+    </expandable-list-item>
+    </expandable-list>
+
+    </div>
+</ion-content>

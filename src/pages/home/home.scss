@@ -1,0 +1,127 @@
+page-home {
+    ion-menu.menu-enabled>.menu-inner {
+        background-color: map-get($colors, aiit_menu_dark_gray);
+    }
+    .avatar_image img {
+        height: 70px;
+        width: 70px;
+        border: 3px solid map-get($colors, aiit_white);
+        border-radius: 50%;
+    }
+    .home-menu-list {
+        .list-item.item-block:last-child {
+            border-bottom: 0.55px solid #323336 !important;
+        }
+        .list-header {
+            background-color: transparent;
+        }
+        .list-title {
+            color: map-get($colors, aiit_white);
+            background-color: transparent;
+        }
+        .list-item {
+            font-family: 'proximanova';
+            font-weight: bold;
+            background-color: transparent;
+            color: map-get($colors, aiit_white);
+            font-size: 15px;
+            .item-inner {
+                border-bottom: 0.55px solid #323336 !important;
+            }
+            .item-status {
+                font-size: 12px;
+                color: map-get($colors, aiit_light_gray);
+                right: 20px;
+                position: absolute;
+            }
+            .user-detail-1 {
+                position: relative;
+                left: 100px;
+                top: -60px;
+                font-size: 1em;
+                font-family: 'normal';
+                font-weight: bold !important;
+                color: map-get($colors, aiit_white);
+            }
+            .user-detail-2 {
+                font-family: 'proximanova';
+                color: map-get($colors, aiit_light_gray);
+                font-size: 14px;
+                position: relative;
+                left: 100px;
+                top: -60px;
+            }
+        }
+    }
+    .menu-title {
+        background-color: map-get($colors, aiit_dark_grey);
+        color: map-get($colors, aiit_med_light_gray);
+        font-family: 'proximanova'; //	padding-top: 5px;
+        font-size: 12px; //	padding-bottom: 5px;
+        //		padding-left: 15px;
+        font-weight: bolder;
+    }
+    .logout-button {
+        border: 2px solid #343434;
+        background-color: map-get($colors, aiit_menu_dark_gray) !important;
+        border-radius: 10px;
+        height: 35px;
+        color: map-get($colors, aiit_light_gray);
+        font-size: 13px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-family: 'proximanova';
+        text-transform: none;
+        vertical-align: middle;
+        bottom: 20px !important;
+        left: 5px !important;
+        position: fixed;
+    }
+    .img_profile {
+        border-radius: 50%;
+        display: inline-block;
+    }
+    .profile_details {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 8%;
+        margin-left: 8%;
+    }
+    .profileList {
+        padding: 0px;
+    }
+    .profileList ion-item:last-child,
+    .profileList.list-ios>.item-block:last-child {
+        border: none;
+        padding: 0px;
+    }
+    .profileList ion-item {
+        padding: 0px;
+    }
+    .profileList ion-item ion-label {
+        margin-left: 10%;
+    }
+    .techName {
+        font-family: 'proximanova';
+        font-size: 1em;
+        font-weight: bold;
+        color: map-get($colors, aiit_white);
+    }
+    .techEmail {
+        font-family: 'proximanova';
+        color: map-get($colors, aiit_light_gray);
+        font-size: 14px;
+        position: relative;
+    }
+    .name_font {
+        font-family: 'proximanova';
+    }
+    .aiit_text {
+        font-family: 'knockoutregular';
+    }
+    ion-nav {
+        background-color: map-get($colors, aiit_white);
+    }
+}

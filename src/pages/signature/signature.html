@@ -1,0 +1,56 @@
+<!--
+  Generated template for the SignaturePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>SIGNATURE</ion-title>
+    <ion-title>signature</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <signature-pad (onBeginEvent)="drawStart()" (onEndEvent)="drawEnd()" ></signature-pad><br/>
+  <button ion-button (click)="drawComplete($event.target.files[0])">Save</button>
+  <button ion-button (click)="drawClear()">Clear</button><br/><br/>
+
+  <img src="{{signaturlook}}">  
+
+</ion-content> -->
+
+
+
+
+<ion-content class="mycontent">
+</ion-content>
+<ion-footer>
+  <ion-header no-border no-shadow>
+    <ion-navbar no-border-bottom transparent>
+      <!-- <ion-buttons start>
+            <button ion-button class="mybutton" >Clear</button>
+          </ion-buttons> -->
+      <ion-title class="mytitle">SIGNATURE</ion-title>
+      <!--<ion-buttons end>-->
+      <ion-buttons end item-end>
+        <button (click)="dismiss()" class="btn-transparent">
+              <img src="assets/images/arrowdown.png" width="20px">
+            </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  <div class="mydiv">
+    <br/><br/><br/><br/>
+    <div align="center">
+      <signature-pad class="Sign_Pad" (onBeginEvent)="drawStart()" (onEndEvent)="drawEnd()"></signature-pad><br/>
+      <button ion-button (click)="drawComplete()">Save</button>
+      <button ion-button (click)="drawClear()">Clear</button><br/><br/>
+    </div>
+    <!-- <img src="{{signaturelook}}">   -->
+  </div>
+</ion-footer>

@@ -1,0 +1,401 @@
+<!--
+  Generated template for the CreateservicereportPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.ionicframework.com/0.9.27/js/ionic.bundle.min.js"></script>
+
+<script src="js/controllers.js"></script>
+
+<ion-header no-border no-shadow>
+    <ion-navbar no-border-bottom transparent>
+        <ion-buttons start>
+            <button (click)="dismiss()" style="background-color: rgba(0,0,0,0);">
+      <img src="assets/images/backbutton.png" width="20px" height="20px">
+    </button>
+        </ion-buttons>
+        <ion-title>CREATE SERVICE REPORT</ion-title>
+        <!--<ion-buttons end>-->
+        <!--<button (click)="dismiss()">-->
+        <!--<ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon>-->
+        <!--</button>-->
+        <!--</ion-buttons>-->
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <p class="text_style">{{serviceReport.TITLE}}</p>
+    <h6 class="proxima_font work-order" style="color: #999999;">Work Order No. {{serviceReport.WORK_ORDER_NUMBER}} </h6><br/>
+        <form [formGroup]="reportFrom">
+            <ion-list>
+                <ion-item text-wrap [ngClass]="{active: isGroupShown(0)}">
+                    <label class="proxima_font" (click)="toggleGroup(0)">Report Header Information</label>
+                    <ion-icon color="success" (click)="toggleGroup(0)" item-right [name]="isGroupShown(0) ? 'arrow-down' : 'arrow-forward'" class="txt-opacity"></ion-icon>
+                    <div *ngIf="isGroupShown(0)">
+                        <ion-list>
+                            <ion-item>
+                                <ion-label style="margin-right: 15px" class="text_style">Work Order</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="WORK_ORDER_NUMBER">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Dealer Code</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="DEALER_CODE">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Manufacturer</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="CUST_EQUIP_MANUFACTURER">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Employee ID</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="EMP_ID_NO"> </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Service Date</ion-label>
+                                <ion-datetime class="common_label" displayFormat="MM/DD/YYYY" formControlName="PROMISE_START_DATE"></ion-datetime>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Model</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="CUST_EQUIP_MODEL">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Customer </ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="CUSTOMER_NAME">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Customer Equipment Number</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="CUST_EQUIP_NUMBER">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Serial Number</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="EQPMNF_SERIAL_NUM">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Equipment Location</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="CUST_EQUIP_LOCATION">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Instructions</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="INSTRUCTIONS_RHI">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Promise Date</ion-label>
+                                <ion-datetime class="common_label" displayFormat="MM/DD/YYYY" formControlName="DATE_PROMISED"></ion-datetime>
+                            </ion-item>
+                        </ion-list>
+                    </div>
+                </ion-item>
+
+
+                <ion-item text-wrap [ngClass]="{active: isGroupShown(1)}">
+                    <label class="proxima_font" (click)="toggleGroup(1)">Truck Information</label>
+                    <ion-icon color="success" (click)="toggleGroup(1)" item-right [name]="isGroupShown(1) ? 'arrow-down' : 'arrow-forward'" class="txt-opacity"></ion-icon>
+                    <div *ngIf="isGroupShown(1)">
+                        <ion-list>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Equipment Number</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="CUST_EQUIP_NUMBER">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Manufacturer</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="CUST_EQUIP_MANUFACTURER">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Model</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="CUST_EQUIP_MODEL">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Serial Number</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="CUST_EQUIP_SERIALNUMBER">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Location</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="CUST_EQUIP_LOCATION">
+                                </ion-input>
+                            </ion-item>
+
+
+                        </ion-list>
+                    </div>
+                </ion-item>
+
+                <ion-item text-wrap [ngClass]="{active: isGroupShown(2)}">
+                    <label class="proxima_font" (click)="toggleGroup(2)">Segment Info</label>
+                    <ion-icon color="success" (click)="toggleGroup(2)" item-right [name]="isGroupShown(2) ? 'arrow-down' : 'arrow-forward'" class="txt-opacity"></ion-icon>
+                    <div *ngIf="isGroupShown(2)">
+                        <ion-list>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Job Code</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="JOB_CODE">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Component Code</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="COMP_CODE">
+                                </ion-input>
+                            </ion-item>
+                            <!-- <ion-item>               
+                <ion-label class="common_label" style="margin-right: 15px">Promise Date</ion-label>            
+                <ion-input class="common_label"style="margin-right: 15px" formControlName="PROMISE_DATE"  name="promiseDate"> </ion-input> 
+            </ion-item> -->
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Instructions</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="INSTRUCTIONS">
+                                </ion-input>
+                            </ion-item>
+                        </ion-list>
+                    </div>
+                </ion-item>
+
+                <ion-item text-wrap [ngClass]="{active: isGroupShown(3)}">
+                    <label class="proxima_font" (click)="toggleGroup(3)">SIMS / Part Causing Failure</label>
+                    <ion-icon color="success" (click)="toggleGroup(3)" item-right [name]="isGroupShown(3) ? 'arrow-down' : 'arrow-forward'" class="txt-opacity"></ion-icon>
+                    <div *ngIf="isGroupShown(3)">
+                        <ion-list>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Part Number</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="PART_NUM">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Part Name</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="PART_NAME">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Quantity</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="QUANTITY">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">SMCS</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="SMCS"> </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Primary</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="PRIMARY"> </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Secondary</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="SECONDARY"> </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Group Number</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="GROUP_NUM"> </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Group Name</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="GROUP_NAME">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Durability Indicator</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="DURABILITY_IND">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Product Inoperable?</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="PROD_INOP"> </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">CAT</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="CAT"> </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Comment</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="COMM"> </ion-input>
+                            </ion-item>
+                        </ion-list>
+                    </div>
+                </ion-item>
+
+                <ion-item text-wrap [ngClass]="{active: isGroupShown(4)}">
+                    <label class="proxima_font" (click)="PushData()">Labor</label>
+                    <ion-icon ios="ios-add" md="md-add" item-right (click)="PushData()" class="txt-opacity"></ion-icon>
+                </ion-item>
+
+                <!--<ion-item text-wrap [ngClass]="{active: isGroupShown(4)}">
+                    <label class="proxima_font" (click)="toggleGroup(4)">Labor</label>
+                    <ion-icon color="success" (click)="toggleGroup(4)" item-right [name]="isGroupShown(4) ? 'arrow-down' : 'arrow-forward'" class="txt-opacity"></ion-icon>
+                    <div *ngIf="isGroupShown(4)">
+                        <ion-list> 
+                            <ion-item>               
+                                <ion-label class="common_label" style="margin-right: 15px">Labor Date</ion-label>            
+                                <ion-input class="common_label"style="margin-right: 15px" formControlName="LABOR_DATE"> </ion-input> 
+                            </ion-item>
+                            <ion-item>               
+                                <ion-label class="common_label" style="margin-right: 15px">Start time</ion-label>            
+                                <ion-input class="common_label"style="margin-right: 15px" formControlName="START_TIME"> </ion-input> 
+                            </ion-item>
+                            <ion-item>               
+                                <ion-label class="common_label" style="margin-right: 15px">End time</ion-label>            
+                                <ion-input class="common_label"style="margin-right: 15px" formControlName="END_TIME"> </ion-input> 
+                            </ion-item>
+                            <ion-item>               
+                                <ion-label class="common_label" style="margin-right: 15px">Overtime</ion-label>            
+                                <ion-input class="common_label"style="margin-right: 15px" formControlName="OVERTIME"> </ion-input> 
+                            </ion-item>
+                            <ion-item>               
+                                <ion-label class="common_label" style="margin-right: 15px">Hours</ion-label>            
+                                <ion-input class="common_label"style="margin-right: 15px" formControlName="HOURS"> </ion-input> 
+                            </ion-item>
+                        </ion-list>
+                    </div>
+                </ion-item>-->
+
+                <ion-item text-wrap [ngClass]="{active: isGroupShown(5)}">
+                    <label class="proxima_font" (click)="toggleGroup(5)">Miscellaneous Cost</label>
+                    <ion-icon color="success" (click)="toggleGroup(5)" item-right [name]="isGroupShown(5) ? 'arrow-down' : 'arrow-forward'" class="txt-opacity"></ion-icon>
+                    <div *ngIf="isGroupShown(5)">
+                        <ion-list>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Employee ID</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="EMP_ID_NO"> </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Date</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="DATE"> </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Charge Code</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="CHARGE_CODE">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Quantity</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="QTY"> </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">DESCRIPTION</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="DESCRIPTION">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">COST</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="COST"> </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">COMMENTS</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="COMMENTS">
+                                </ion-input>
+                            </ion-item>
+                        </ion-list>
+                    </div>
+                </ion-item>
+
+                <ion-item text-wrap [ngClass]="{active: isGroupShown(6)}">
+                    <label class="proxima_font" (click)="toggleGroup(6)">Work Order Closing</label>
+                    <ion-icon color="success" (click)="toggleGroup(6)" item-right [name]="isGroupShown(6) ? 'arrow-down' : 'arrow-forward'" class="txt-opacity"></ion-icon>
+                    <div *ngIf="isGroupShown(6)">
+                        <ion-list>
+                            <ion-label class="proxima_font text_style" style="margin-right: 15px">Is the job completed?</ion-label>
+                            <input type="radio" formControlName="COMPLETED" value="Yes"> Yes
+                            <input type="radio" formControlName="COMPLETED" value="No"> No
+
+                            <ion-label class="proxima_font text_style" style="margin-right: 15px">Are warranty parts being returned?</ion-label>
+                            <input type="radio" formControlName="PARTS_RETURNED" value="Yes"> Yes
+                            <input type="radio" formControlName="PARTS_RETURNED" value="No"> No
+
+                            <ion-label class="proxima_font text_style" style="margin-right: 15px">Are usused parts being restocked?</ion-label>
+                            <input type="radio" formControlName="PARTS_RESTOCKED" value="Yes"> Yes
+                            <input type="radio" formControlName="PARTS_RESTOCKED" value="No"> No
+
+                            <ion-label class="proxima_font text_style" style="margin-right: 15px">Are checked-out tools being returned?</ion-label>
+                            <input type="radio" formControlName="TOOLS_RETURNED" value="Yes"> Yes
+                            <input type="radio" formControlName="TOOLS_RETURNED" value="No"> No
+
+                            <ion-label class="proxima_font text_style" style="margin-right: 15px">Is a Reman core being returned?</ion-label>
+                            <input type="radio" formControlName="REMAN_RETURNED" value="Yes"> Yes
+                            <input type="radio" formControlName="REMAN_RETURNED" value="No"> No
+
+                            <ion-label class="proxima_font text_style" style="margin-right: 15px">Has the information been entered to SIMS?</ion-label>
+                            <input type="radio" formControlName="INFO_IN_SIMS" value="Yes"> Yes
+                            <input type="radio" formControlName="INFO_IN_SIMS" value="No"> No
+                        </ion-list>
+                    </div>
+                </ion-item>
+
+                <ion-item text-wrap [ngClass]="{active: isGroupShown(7)}">
+                    <label class="proxima_font" (click)="toggleGroup(7)">Additional Opportunities</label>
+                    <ion-icon color="success" (click)="toggleGroup(7)" item-right [name]="isGroupShown(7) ? 'arrow-down' : 'arrow-forward'" class="txt-opacity"></ion-icon>
+                    <div *ngIf="isGroupShown(7)">
+                        <ion-list>
+                            <ion-label class="proxima_font text_style" style="margin-right: 15px">Is there Additionl Service to be done?</ion-label>
+                            <input class="proxima_font" type="radio" formControlName="ADDITIONAL_SERVICE" value="Yes">                        Yes
+                            <input class="proxima_font" type="radio" formControlName="ADDITIONAL_SERVICE" value="No">                        No
+
+                            <ion-label class="proxima_font text_style" style="margin-right: 15px">Did the customer request a quote for additional service?</ion-label>
+                            <input type="radio" formControlName="SERVICE_QUOTE" value="Yes"> Yes
+                            <input type="radio" formControlName="SERVICE_QUOTE" value="No"> No
+
+                            <ion-label class="proxima_font text_style" style="margin-right: 15px">Did the customer request a PSSR to contact them?</ion-label>
+                            <input type="radio" formControlName="PSSR_REQ" value="Yes"> Yes
+                            <input type="radio" formControlName="PSSR_REQ" value="No"> No
+
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Comment</ion-label>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="COMMENT"> </ion-input>
+                            </ion-item>
+                        </ion-list>
+                    </div>
+                </ion-item>
+                <ion-item text-wrap [ngClass]="{active: isGroupShown(8)}">
+                    <label class="proxima_font" (click)="toggleGroup(8)">Repair Background</label>
+                    <ion-icon color="success" (click)="toggleGroup(8)" item-right [name]="isGroupShown(8) ? 'arrow-down' : 'arrow-forward'" class="txt-opacity"></ion-icon>
+                    <div *ngIf="isGroupShown(8)">
+                        <ion-list>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Customer Complaint</ion-label>
+                                <button ion-button clear color="dark" type="button" item-right (click)="listenToSpeech()">
+                                <ion-icon name="mic-off" *ngIf="!ListentoSpeech"></ion-icon>
+                                <ion-icon name="mic" *ngIf="ListentoSpeech"></ion-icon>
+                                </button>
+                                <ion-input *ngFor="let speech of speechList" class="proxima_font" style="margin-right: 15px" formControlName="COMPLAINTS">{{speech}}</ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Cause of Failure</ion-label>
+                                <ion-icon ios="ios-mic" md="md-mic" item-right></ion-icon>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="CORRECTION">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Resultant of Damage</ion-label>
+                                <ion-icon ios="ios-mic" md="md-mic" item-right></ion-icon>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="COMPLICATIONS">
+                                </ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label class="proxima_font text_style" style="margin-right: 15px">Repair Process Comments </ion-label>
+                                <ion-icon ios="ios-mic" md="md-mic" item-right></ion-icon>
+                                <ion-input class="proxima_font" style="margin-right: 15px" formControlName="PROCESS_COMMENTS">
+                                </ion-input>
+                            </ion-item>
+                        </ion-list>
+                    </div>
+                </ion-item>
+
+                <ion-item text-wrap [ngClass]="{active: isGroupShown(9)}">
+                    <label class="proxima_font" style="margin-right: 15px" (click)="onFileattachmentsPagePage()">File Attachments</label>
+                    <ion-icon ios="ios-add" md="md-add" (click)="onFileattachmentsPagePage()" item-right class="txt-opacity"> </ion-icon>
+                </ion-item>
+            </ion-list>
+        </form>
+</ion-content>
+<ion-footer>
+    <button class="blue_button_edged" type='submit' (click)="createServiceReport()">SUBMIT SERVICE REPORT</button>
+</ion-footer>

@@ -1,0 +1,181 @@
+page-taskdetails {
+
+    .task-list-status {
+        color: map-get($colors, aiit_blue_light);
+        background-color: map-get($colors, aiit_blue_lightbg);
+        border-width: 10px;
+        border-radius: 40px 40px;
+        position:absolute;
+        left:20px;
+        font-size: 12px;
+        font-weight: bold;
+        line-height:20px;
+        text-align:center;
+        width: 120px;
+    }
+
+    .task-list-status-overdue {
+        color: map-get($colors, aiit_error_pink);
+        background-color: map-get($colors, aiit_error_bg);
+        border-width: 10px;
+        border-radius: 40px 40px;
+        position:absolute;
+        left:20px;
+        font-size: 12px;
+        font-weight: bold;
+        line-height:20px;
+        text-align:center;
+        width: 120px;
+    }
+
+    .task-list-status-today {
+        color: map-get($colors, aiit_today_yellow);
+        background-color: map-get($colors, aiit_today_bg);
+        border-width: 10px;
+        border-radius: 40px 40px;
+        position:absolute;
+        left:20px;
+        font-size: 12px;
+        font-weight: bold;
+        line-height:20px;
+        text-align:center;
+        width: 120px;
+
+    }
+    .task-list-status-completed {
+        color: map-get($colors, aiit_completed_text);
+        background-color: map-get($colors, aiit_completed_bg);
+        border-width: 10px;
+        border-radius: 40px 40px;
+        position:absolute;
+        left:20px;
+        font-size: 12px;
+        font-weight: bold;
+        line-height:20px;
+        text-align:center;
+        width: 100px;
+
+    }
+
+
+
+
+
+     .action_button_container {
+        @extend .button_container;
+        margin-left: 30px;
+    }
+    
+    .empty-state {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 20px;
+        color: black;
+        width: auto; 
+        height: 130px; 
+        background-color: map-get($colors, aiit_gray_line);
+
+        position: absolute;
+        bottom: 0px; 
+        right: 15px; 
+        left: 0px; 
+        z-index: 1;  
+    }
+
+    .action-button-left {  
+        border-style: solid;
+        border-width: medium;
+        background-color: map-get($colors, aiit_white);
+        width: 130px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .action-button-right {  
+        border: none;
+        background-color: black;
+        color: map-get($colors, aiit_white);
+        width: 130px;
+        height: 30px;
+        font-size: 14px;
+    }
+    .info {  
+        font-family: 'oswaldregular';
+        color: map-get($colors, aiit_dark_grey);
+        text-decoration: none;
+        font-size: 14px;
+        word-spacing: 2px;
+    }
+
+    .em-task-creator {
+        color: map-get($colors, aiit_blue_text);
+        font-family: 'proximanova';
+        font-weight: bold;
+        
+    }
+    .actions-table {
+        width: 100%;
+        text-align: center;
+        color: map-get($colors, aiit_light_gray);
+        font-weight: bold;
+        font-size: 16px;
+    }
+    .task-status-header {
+            color: map-get($colors, aiit_blue_light);
+            background-color: map-get($colors, aiit_blue_lightbg);
+            border-width: 2px;
+            border-radius: 40px 40px;
+            position:absolute;
+            left:20px;
+            // bottom: 100px;
+            font-size: 12px;
+            font-weight: bold;
+            line-height:20px;
+            text-align:center;
+            width: 120px;
+    }
+
+    .card_design{
+        border-radius: 5px;
+        box-shadow: 3px 4px 2px map-get($colors, aiit_light_gray);
+        width: 90%;
+        background-color: map-get($colors, aiit_gray_line);
+    }
+
+    .proxima_font{
+        font-family: 'proximanova';
+    }
+
+    .avatar{ margin-right: 10px; }
+    .margin-right{ margin-right: 20px; }
+    .txtMore {margin-top: 18px; }
+    .txt-opacity{ color: rgba(0,0,0,0.45)}
+
+    .row{ 
+        align-items: center;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .btn_file{
+        @extend .common_button_template_title_style;
+        width: 100%;
+        border-color: map-get($colors, aiit_light_gray);
+        border-style: solid;
+        background-color: map-get($colors, aiit_white);
+        border-width: 1px;
+        color: map-get($colors, aiit_blue_segment);
+    }
+
+    .font_color{
+        color: map-get($colors, aiit_button_gray);
+    }
+
+    .body{
+        font-family: 'proximanova';
+        color: map-get($colors, aiit_light_gray);
+    }
+
+}

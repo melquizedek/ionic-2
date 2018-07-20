@@ -1,0 +1,45 @@
+<!--
+  Generated template for the MyServiceReport page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border no-shadow>
+  <ion-navbar no-border-bottom transparent>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>HELP</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <ion-slides #helpSlider class="slider" (ionSlideDidChange)="slideChanged()">
+        <ion-slide class="slider-slide">
+            <div class="slide_content_container">
+                <h1 class="title_text_white">ACCOUNT TYPES</h1>
+                <div class="content_div_full">
+                    <h1 class="header_help">Manager LOGIN</h1>
+                    <p class="content_text_white_stable">Login using your registered email address and password. If you do not have an account, kindly email to support team.</p>
+                </div>
+                <div class="content_div_full">
+                    <h1 class="header_help">Technician LOGIN</h1>
+                    <p class="content_text_white_stable">Technicians must login using their Tech credentials.</p>
+                </div>
+            </div>
+        </ion-slide>
+        <ion-slide class="slider-slide">
+            <div class="slide_content_container">
+                <h1 class="title_text_white">SETUP</h1>
+                <p class="content_text_white_stable"></p>
+            </div>
+        </ion-slide>
+    </ion-slides>
+
+    <div class="button_container">
+        <div class="text_bottom_container">
+        <span><span class="text_contact_page">For further assistance, please contact the Caterpillar Help Desk via telephone at </span><a class="link_phone_email" id="phone_number_contact" (click)="clickPhoneNumber()"></a><span class="text_contact_page"> or via email at </span><a class="link_phone_email"  id="email_add_contact" (click)="clickEmail()"></a></span>
+        </div>
+        <button class="common_blue_button" style="width: 90%" (click)="swipeSlider()" ion-button>{{ buttonText }}</button>
+    </div>
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-content class="mycontent">
+</ion-content>
+
+<ion-footer>
+  <ion-header no-border no-shadow>
+    <ion-navbar no-border-bottom transparent>
+      <ion-buttons start>
+        <button ion-button class="mybutton">Clear</button>
+      </ion-buttons>
+      <ion-buttons end>
+        <button (click)="dismiss()" class="btn-transparent">
+                <img src="assets/images/arrowdown.png" width="20px">
+              </button>
+      </ion-buttons>
+      <ion-title>FILTERS</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item>
+      <ion-label class="myabel" id="1" (click)="onFilterbranch()">Branch
+        <ion-icon ios="ios-add" md="md-add" class="txt-opacity" item-right></ion-icon>
+      </ion-label><br>
+    </ion-item>
+    <ion-item>
+      <ion-label class="mylabel" id="2" (click)="Specialty()">Specialty
+        <ion-icon ios="ios-add" md="md-add" class="txt-opacity" item-right></ion-icon>
+      </ion-label><br>
+    </ion-item>
+    <ion-item>
+      <ion-label color="dark">Shift Schedule</ion-label>
+      <ion-select interface="popover">
+        <ion-option value="a">1</ion-option>
+        <ion-option value="b">2</ion-option>
+        <ion-option value="c">3</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label class="mylabel" id="4" (click)="onFilterfieldsPagePage()">Price
+        <ion-icon ios="ios-add" md="md-add" class="txt-opacity" item-right></ion-icon>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <button class="blue_button_edged">UPDATE FILTERS</button>
+</ion-footer>

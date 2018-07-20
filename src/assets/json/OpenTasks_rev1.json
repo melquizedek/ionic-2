@@ -1,0 +1,168 @@
+{
+    [
+        {
+            "STWSERVICEREPORT": {
+                "-version": "2008A",
+                "-softwareversion": "2011B",
+                "-build": "12",
+                "-language": "0009",
+                "-DBSUPLOADED": "False",
+                "-SessionID": "0",
+                "REPHEADER": {
+                    "DEALERCODE": "UAT0",
+                    "WORKORDER": "1J00218",
+                    "SERVICEDATE": "2017-03-20",
+                    "PROMISEDATE": "2017-04-20",
+                    "EMPLOYEEID": "4048",
+                    "CUSTOMER": "DIOR01",
+                    "MANUFACTURER": "Caterpillar Inc.",
+                    "SERIALNUMBER": "1X1",
+                    "SMU": "12345",
+                    "SMUUNIT": "Hours",
+                    "EQUIPMENTLOCATION": "San Jose Del Monte, Bulacan",
+                    "INSTRUCTIONS": "This is a sample Job"
+                },
+                
+                "SEGMENTS": {
+                    "SEGMENT": {
+                        "-SEGMENTNO": "01",
+                        "LABORDETAILS": {
+                            "LABORDETAILSREC": [{
+                                "EMPLOYEEID": "4048",
+                                "DATE": "2017-03-20",
+                                "OVERTIMEINDICATOR": "0",
+                                "LABORCODE": "FLD",
+                                "STARTTIME": "08:00",
+                                "ENDTIME": "17:05",
+                                "MANHOURS": "8",
+                                "SHIFT": "1"
+                            }, {
+                                "EMPLOYEEID": "4048",
+                                "DATE": "2017-03-19",
+                                "OVERTIMEINDICATOR": "0",
+                                "LABORCODE": "FLD",
+                                "STARTTIME": "08:00",
+                                "ENDTIME": "17:00",
+                                "MANHOURS": "8"
+                            }]
+                        },
+                        "MISCCOST": {
+                            "MISCCOSTSREC": [{
+                                "EMPLOYEEID": "4048",
+                                "DATE": "2017-03-20",
+                                "CHARGECODE": "GAS",
+                                "QTY": "40",
+                                "DESCRIPTION": "GASOLINE",
+                                "COST": "1920",
+                                "COMMENTS": "SHELLV-POWER"
+                            }, {
+                                "EMPLOYEEID": "4048",
+                                "DATE": "2017-03-20",
+                                "CHARGECODE": "TOL",
+                                "QTY": "196",
+                                "DESCRIPTION": "TOLL FEE",
+                                "COST": "850",
+                                "COMMENTS": "NLEX TOLL FEE CLASS 2"
+                            }]
+                        },
+                        "REPAIRBKG": {
+                            "CUSTOMERCOMPLAINT": "Engine noise and Idling rough",
+                            "FAILURECAUSE": "Sprung con rod bearing",
+                            "DAMAGE": "Crankshaft damage, connecting rod damage",
+                            "COMMENTS": "Bottom rebuild"
+                        },
+                        "SEGMENTINFO": {
+                            "WOSTARTDATE": "2017-03-20",
+                            "WOENDDATE": "2017-03-20"
+                        }
+                    }
+                },
+                "WORKORDERCLOSING": {
+
+                }
+            }
+        },
+        {
+            "STWSERVICEREPORT": {
+                "-version": "2008A",
+                "-softwareversion": "2011B",
+                "-build": "12",
+                "-language": "0009",
+                "-DBSUPLOADED": "False",
+                "-SessionID": "0",
+                "REPHEADER": {
+                    "DEALERCODE": "UAT0",
+                    "WORKORDER": "1J00218",
+                    "SERVICEDATE": "2017-03-20",
+                    "PROMISEDATE": "2017-04-20",
+                    "EMPLOYEEID": "4048",
+                    "CUSTOMER": "DIOR01",
+                    "MANUFACTURER": "Caterpillar Inc.",
+                    "SERIALNUMBER": "1X1",
+                    "SMU": "12345",
+                    "SMUUNIT": "Hours",
+                    "EQUIPMENTLOCATION": "San Jose Del Monte, Bulacan",
+                    "INSTRUCTIONS": "This is a sample Job"
+                },
+                
+                "SEGMENTS": {
+                    "SEGMENT": {
+                        "-SEGMENTNO": "01",
+                        "LABORDETAILS": {
+                            "LABORDETAILSREC": [{
+                                "EMPLOYEEID": "4048",
+                                "DATE": "2017-03-20",
+                                "OVERTIMEINDICATOR": "0",
+                                "LABORCODE": "FLD",
+                                "STARTTIME": "08:00",
+                                "ENDTIME": "17:05",
+                                "MANHOURS": "8",
+                                "SHIFT": "1"
+                            }, {
+                                "EMPLOYEEID": "4048",
+                                "DATE": "2017-03-19",
+                                "OVERTIMEINDICATOR": "0",
+                                "LABORCODE": "FLD",
+                                "STARTTIME": "08:00",
+                                "ENDTIME": "17:00",
+                                "MANHOURS": "8"
+                            }]
+                        },
+                        "MISCCOST": {
+                            "MISCCOSTSREC": [{
+                                "EMPLOYEEID": "4048",
+                                "DATE": "2017-03-20",
+                                "CHARGECODE": "GAS",
+                                "QTY": "40",
+                                "DESCRIPTION": "GASOLINE",
+                                "COST": "1920",
+                                "COMMENTS": "SHELLV-POWER"
+                            }, {
+                                "EMPLOYEEID": "4048",
+                                "DATE": "2017-03-20",
+                                "CHARGECODE": "TOL",
+                                "QTY": "196",
+                                "DESCRIPTION": "TOLL FEE",
+                                "COST": "850",
+                                "COMMENTS": "NLEX TOLL FEE CLASS 2"
+                            }]
+                        },
+                        "REPAIRBKG": {
+                            "CUSTOMERCOMPLAINT": "Engine noise and Idling rough",
+                            "FAILURECAUSE": "Sprung con rod bearing",
+                            "DAMAGE": "Crankshaft damage, connecting rod damage",
+                            "COMMENTS": "Bottom rebuild"
+                        },
+                        "SEGMENTINFO": {
+                            "WOSTARTDATE": "2017-03-20",
+                            "WOENDDATE": "2017-03-20"
+                        }
+                    }
+                },
+                "WORKORDERCLOSING": {
+
+                }
+            }
+        } 
+    ]
+}

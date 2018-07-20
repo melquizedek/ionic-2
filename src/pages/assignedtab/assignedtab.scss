@@ -1,0 +1,68 @@
+page-assignedtab {
+    .main-container {
+        .task-list-item {
+            border-top: none;
+            .task-list-title {
+                font-family: 'proximanova';
+                color: map-get($colors, aiit_dark_grey) !important;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .task-list-description {
+                font-family: 'proximanova';
+                color: map-get($colors, aiit_light_gray);
+                text-decoration: none;
+                font-size: 16px;
+            }
+            .task-list-date {
+                margin-top: 10px;
+                font-family: 'proximanova';
+                color: map-get($colors, aiit_light_gray);
+                font-size: 11px;
+                text-transform: uppercase;
+            }
+            .task-list-technician {
+                font-family: 'proximanova';
+                color: map-get($colors, aiit_dark_grey) !important;
+                text-decoration: none;
+                font-size: 16px;
+            }
+        }
+        .drop-down-list {
+            padding: 5px;
+            .drop-down-label {
+                font-family: 'proximanova';
+                color: map-get($colors, aiit_dark_grey) !important;
+                font-size: 20px;
+                font-weight: bold;
+                margin-left: 18px;
+            }
+            .drop-down-items {
+                font-family: 'proximanova';
+                color: map-get($colors, aiit_dark_grey) !important;
+                font-size: 20px;
+                font-weight: bold;
+                border: 0px;
+                outline: 0px;
+            }
+        }
+        .add-task-button {
+            font-family: 'proximanova';
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+    .empty-container {
+        margin-top: 0px !important;
+        padding-top: 0px !important;
+        top: 0px !important;
+        height: auto !important;
+        min-height: 100%;
+        position: relative;
+        .scroll-content {
+            margin-top: 0px !important;
+            padding-top: 0px !important;
+            padding-top: 0px !important;
+        }
+    }
+}

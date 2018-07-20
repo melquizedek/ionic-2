@@ -1,0 +1,28 @@
+<!--
+  Generated template for the Task page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header no-border no-shadow>
+  <ion-navbar no-border-bottom transparent>
+  </ion-navbar>  
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of taskListItems; let i = index">
+      <ion-item>        
+        <h2>{{ item.taskName }}</h2>
+        <h2>{{ item.dueDate }}</h2>
+      </ion-item>
+      <ion-item-options side="right">
+        <button (click)="goToModifyTask()" ion-button color="primary">
+          View
+        </button>        
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <button class="common_blue_button" type='submit' (click)='goToAddTask()'>Add Task</button><br>
+</ion-content>

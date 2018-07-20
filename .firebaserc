@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "service-technician",
+    "dev": "service-technician"
+  }
+}

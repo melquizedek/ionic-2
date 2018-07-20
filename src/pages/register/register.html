@@ -1,0 +1,37 @@
+<!--
+  Generated template for the Register page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+  
+<ion-header no-border no-shadow>
+  <ion-navbar no-border-bottom transparent>    
+  </ion-navbar>  
+</ion-header>
+
+<ion-content padding>
+    <form [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm.value)">
+        <label class="common_label" stacked>Initials</label><br/>
+        <input class="common_text_field" type="text" value="" formControlName="empinitials"/><br/><br/>
+        <label class="common_label" stacked>First Name</label><br/>
+        <input class="common_text_field" type="text" value="" formControlName="emplastname"/><br/><br/>
+        <label class="common_label" stacked>Address 1</label><br/>
+        <input class="common_text_field" type="text" value="" formControlName="custaddr1"/><br/><br/>
+        <label class="common_label" stacked>Address 2</label><br/>
+        <input class="common_text_field" type="text" value="" formControlName="custaddr2"/><br/><br/>
+        <label class="common_label" stacked>Address 3</label><br/>
+        <input class="common_text_field" type="text" value="" formControlName="custaddr3"/><br/><br/>
+        <label class="common_label" stacked>Zip Code</label><br/>
+        <input class="common_text_field" type="text" value="" formControlName="zipcode"/><br/><br/>
+        <label class="common_label" stacked>Phone No.</label><br/>
+        <input class="common_text_field" type="text" value="" formControlName="phoneno"/><br/><br/>
+        <label class="common_label" stacked>Username</label><br/>
+        <input class="common_text_field" type="text" value="" formControlName="username"/><br/><br/>
+        <label class="common_label" stacked>Password</label><br/>
+        <input class="common_text_field" type="password" value="" formControlName="password"/><br/><br/>
+        <label class="common_label" stacked>Verify Password</label><br/>
+        <input class="common_text_field" type="password" value="" formControlName="verifypassword"/><br/><br/>
+        <button class="common_yellow_button" type='submit' ion-button (click)='goToDashboard()'>Submit</button><br>
+    </form><br/>    
+</ion-content>

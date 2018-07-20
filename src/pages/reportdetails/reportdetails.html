@@ -1,0 +1,52 @@
+<!--
+  Generated template for the Reportdetails page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border no-shadow>
+  <ion-navbar no-border-bottom transparent>
+    <ion-title>SERVICE REPORT</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!--old-->
+  <!--<h1 class="common_label"> {{mainTask.TASK_DESCRIPTION}} </h1>
+  <h4 class="common_label"> {{mainTask.WORK_ORDER_NUMBER}} </h4><br/>-->
+
+  <!--new-->
+
+  <h1 class="proxima_font"> {{serviceReport.TITLE}} </h1>
+  <h6 class="proxima_font work-order">Work Order No. {{serviceReport.WORK_ORDER_NUMBER}}</h6><br/>
+
+  <ion-list>
+    <ion-item *ngFor="let cat of category; let i = index;" text-wrap [ngClass]="{active: isGroupShown(i)}">
+      <span>
+        <label class="proxima_font" (click)="toggleGroup(i)" >{{ cat.categoryname }} </label>
+        <ion-icon color="success" item-right (click)="toggleGroup(i)" [name]="isGroupShown(i) ? 'arrow-down' : 'arrow-forward'" class="txt-opacity"></ion-icon>
+      </span>
+      <!--<ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>       -->
+      <div *ngIf="isGroupShown(i)">
+        <ion-list>
+          <ion-item *ngFor="let subcat of cat.subcategory;">
+            <ion-label class="proxima_font mr-10 text_style"> {{subcat.item}} </ion-label>
+            <ion-label class="proxima_font p-0">{{subcat.value}} </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Comment</ion-label>
+      <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">{{serviceReport.REJECTNOTES}}</ion-label>
+    </ion-item>
+
+    <ion-item class="proxima_font" (click)="onFileattachmentsPagePage()">
+      <ion-label style="width: 40%; margin-right: 15px">File Attachments</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <button class="blue_button_edged" type='submit' (click)="editReport()">EDIT SERVICE REPORT</button><br/><br/>
+</ion-footer>

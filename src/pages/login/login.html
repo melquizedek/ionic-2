@@ -1,0 +1,79 @@
+<!--
+  Generated template for the Login page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content no-bounce>
+  <span class="aiit_text">AIIT</span>
+  <ion-slides no-border no-lines no-shadow pager="true" class="background_card">
+    <ion-slide>
+        <div class="slide_card">
+          <br/><br/>
+          <br/><br/>
+          <img src="assets/images/card1.png">
+          <br/><br/>
+          <span class="text_card">Assign task to members of your team.</span>
+        </div>
+      
+    </ion-slide>
+    <ion-slide>
+        <div class="slide_card">
+        
+          <br/><br/>
+          <br/><br/>
+          <img src="assets/images/card2.png">
+          <br/><br/>
+          <span class="text_card">Manage task to members of your team.</span>
+        </div>
+ 
+    </ion-slide>
+    <ion-slide>
+        <div class="slide_card">
+          <br/><br/>
+          <br/><br/>
+          <img src="assets/images/card3.png">
+          <br/><br/>
+          <span class="text_card">Mark finished task as complete.</span>
+        </div>
+ 
+    </ion-slide>
+  </ion-slides>
+
+
+  <form padding [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm.value)">
+
+    <ion-item>
+      <ion-label floating><span class="login_text">Email Address</span></ion-label>
+      <ion-input class="common_text_field" type="text" formControlName="username"></ion-input>
+
+      <button ion-button clear color="dark" type="button" item-right>
+      <!--<ion-icon name="person"></ion-icon>-->
+      <img src="assets/images/loginIcon.png" style="width : 10px ; height : 10px">
+      </button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating><span class="login_text">Password</span></ion-label>
+      <ion-input class="common_text_field" type="{{type}}" formControlName="password"></ion-input>
+
+      <button ion-button clear color="dark" type="button" item-right (click)="showPassword()">
+      <img src="assets/images/passwordIcon.png" style="width : 10px ; height : 10px" *ngIf="!showPass">
+      <!--<ion-icon name="eye" *ngIf="!showPass"></ion-icon>-->
+      <ion-icon name="eye-off" *ngIf="showPass"></ion-icon> 
+     </button>
+    </ion-item>
+
+    <br/><br/>
+    <a (click)='showPrompt()'><span class="forgot_text">Forgot Password</span></a>
+
+  </form>
+
+</ion-content>
+
+<ion-footer>
+
+  <button class="blue_button_edged" type='submit' ion-button (click)='goToLogin()'>Login</button>
+
+</ion-footer>

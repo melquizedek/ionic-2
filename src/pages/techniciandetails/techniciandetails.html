@@ -1,0 +1,86 @@
+<!--
+  Generated template for the Techniciandetails page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border no-shadow>
+  <ion-navbar no-border-bottom transparent>
+    <ion-buttons right>
+      <button ion-button modify (click)="modifyTechnician()">
+        <img class="ellipsis" src="assets/images/moreIcon.png" width="20px">
+        <!--<img class="ellipsis" src="assets/images/moreIcon.png">-->
+        <!--<ion-icon name="create" isActive="false"></ion-icon>-->
+      </button>
+    </ion-buttons>
+    <!--<ion-title>Technician Profile</ion-title>-->
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding (click)="hideDeleteTech()">
+  <div class="profile-details">
+    <div class="pic">
+      <img class="img1" src="assets/images/default_profile.png">
+      <img class="img2" height="16" width="16" src="assets/images/techAdded.png">
+      <button etect-outside-click perform="hideDeleteTech" *ngIf="showDeleteTech" class="remove-tech-button" type='submit' (click)="deleteToMyTechnician()"><img height="14px" src="assets/images/trashIcon.png" class="trashIcon">Remove Technician</button>
+      <!--<button etect-outside-click perform="hideDeleteTech" *ngIf="showDeleteTech" class="remove-tech-button" type='submit' (click)="deleteToMyTechnician()"><img height="14" width="10" src="assets/images/trash.png"> Remove Technician</button>-->
+    </div>
+    <!--<img class="ellipsis" src="assets/images/moreIcon.png">-->
+    <p class="details"><label>{{technician.EMP_LAST_NAME}}</label><br />
+      <label class="empid">{{technician.EMP_ID_NO}}</label></p>
+  </div>
+
+  <hr />
+  <div style="text-align:center;">
+    <table class="shift">
+      <td colspan="1">
+        <tr>
+          <img height="12" width="12" src="assets/images/shiftStartIcon.png"> Regular Hour Start
+        </tr>
+        <tr>
+          <img height="12" width="12" src="assets/images/shiftEndIcon.png"> Regular Hour End
+        </tr>
+      </td>
+
+      <td colspan="1">
+        <tr>
+          {{technician.ORM_HOURS_BEGIN}}
+        </tr>
+        <tr>
+          {{technician.ORM_HOURS_END}}
+        </tr>
+      </td>
+    </table>
+  </div>
+  <hr />
+  <div>
+    <label class="proxima_font"> <b>Phone Number </b> </label> <br/>
+    <label class="body"> {{technician.PHONE_NO}}  </label> <br/><br/>
+    
+    <label class="proxima_font"> <b>Branch Store </b>  </label> <br/>
+    <label class="body"> No Branch Store  </label> <br/><br/>
+
+    <label class="proxima_font"> <b>Shift Code </b> </label> <br/>
+    <label class="body"> {{technician.SHIFT_CODE}} </label> <br/><br/>
+
+    <label class="proxima_font"> <b>Cost Ctr Code </b>  </label> <br/>
+    <label class="body">  {{technician.COST_CTR_CODE}} </label> <br/><br/>
+
+    <label class="proxima_font"> <b>Address </b> </label> <br/>
+    <label class="body"> {{technician.CUST_ADDR_1}}  </label> <br/><br/>
+
+    <label class="proxima_font"> <b>Specialty </b> </label> <br/>
+    <label class="body"> {{technician.SPECIALTY_1}}  </label> <br/><br/>
+
+    <!--<label class="common_label"> <b>Regular Hour Start </b> </label> <br/>
+    <label class="common_label"> {{technician.ORM_HOURS_BEGIN}}  </label> <br/><br/>
+
+    <label class="commSon_label"> <b>Regular Hour End </b> </label> <br/>
+    <label class="common_label"> {{technician.ORM_HOURS_END}}  </label> <br/><br/>-->
+
+    <label class="proxima_font"> <b>Remarks </b> </label> <br/>
+    <label class="body">  {{technician.REMARKS}} </label> <br/><br/>
+
+    <button class="common_blue_button" [hidden]="addMyTran" type='submit' (click)="addToMyTechnician()">Add to My Technician</button>
+  </div>
+</ion-content>

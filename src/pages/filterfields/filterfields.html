@@ -1,0 +1,50 @@
+<!--
+  Generated template for the FilterfieldsPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content class="mycontent"></ion-content>
+
+<ion-footer>
+  <ion-header no-border no-shadow>
+    <ion-navbar no-border-bottom transparent>
+      <ion-buttons start>
+        <button (click)="dismiss()" class="buttonclose btn-transparent">
+          <img src="assets/images/backbutton.png" width="20px">
+        </button>
+      </ion-buttons>
+      <ion-title>PRICE</ion-title>
+    </ion-navbar>
+  </ion-header>
+  <div class="mydiv" align="center">
+    <!--<table>
+      <tr>
+      <th>
+      </th>
+      <th>
+        <ion-title class="mytitle">PRICE
+        </ion-title>
+      </th>
+      <th>
+        <ion-buttons end>
+          <button (click)="dismiss()" class="buttonclose btn-transparent">
+                  <ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon>
+              </button>
+        </ion-buttons>
+      </th>
+      <tr>
+    </table>
+    <HR>-->
+
+    <br> <br> <br>
+    <h5 align="center" class="header"> Choose your Price Range </h5>
+    <br><br>
+    <h1 align="center"> ${{min}} - ${{max}} </h1>
+    <ion-range item-center class="slider" dualKnobs="true" [(ngModel)]="value" min="10" max="1000" (ionChange)="SetBadge(value)"
+      pin="true"></ion-range>
+    <br><br>
+    <button class="blue_button_edged">DONE</button>
+    <!--<button ion-button class="Done">Done</button>-->
+  </div>
+</ion-footer>

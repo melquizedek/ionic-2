@@ -1,0 +1,187 @@
+<!--
+  Generated template for the FilterbranchPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border no-shadow>
+  <ion-navbar no-border-bottom transparent>
+    <ion-buttons start>
+      <button (click)="dismiss()" class="buttonclose btn-transparent">
+          <img src="assets/images/backbutton.png" width="20px">
+        </button>
+    </ion-buttons>
+    <ion-title>Branch</ion-title>
+  </ion-navbar>
+
+  <!--<ion-navbar>
+    <ion-title>Branch
+      <ion-buttons end>
+        <button (click)="dismiss()" class="buttonclose">
+                  <ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon>
+              </button>
+      </ion-buttons>
+    </ion-title>
+  </ion-navbar>-->
+</ion-header>
+<ion-content>
+  <form>
+    <ion-list>
+      <ion-item text-wrap [ngClass]="{active: isGroupShown(0)}">
+        <label class="proxima_font" (click)="toggleGroup()">All Branches</label>
+      </ion-item>
+      <ion-item text-wrap [ngClass]="{active: isGroupShown(1)}">
+        <label class="proxima_font" (click)="toggleGroup(1)">Chicago, IL</label>
+        <ion-icon color="success" (click)="toggleGroup(1)" [name]="isGroupShown(1) ? 'arrow-down' : 'arrow-forward'" class="txt-opacity"></ion-icon>
+        <!--<ion-icon color="success" (click)="toggleGroup(1)" [name]="isGroupShown(1) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>-->
+        <div *ngIf="isGroupShown(1)">
+          <ion-list>
+            <ion-item>
+              <ion-checkbox id="checkbox" item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #134</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox id="checkbox" item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #056</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox id="checkbox" item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #123</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox id="checkbox" item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #87</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox id="checkbox" item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #134</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox id="checkbox" item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #056</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox id="checkbox" item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #87</ion-label>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-item>
+      <ion-item text-wrap [ngClass]="{active: isGroupShown(2)}">
+        <label class="proxima_font" (click)="toggleGroup(2)">Los Angeles, CA</label>
+        <ion-icon color="success" (click)="toggleGroup(2)" [name]="isGroupShown(2) ? 'arrow-down' : 'arrow-forward'" class="txt-opacity"></ion-icon>
+        <!--<ion-icon color="success" (click)="toggleGroup(2)" [name]="isGroupShown(1) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>-->
+        <div *ngIf="isGroupShown(2)">
+          <ion-list>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #134</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #056</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #123</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #87</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #134</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #056</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #87</ion-label>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-item>
+      <ion-item text-wrap [ngClass]="{active: isGroupShown(3)}">
+        <label class="proxima_font" (click)="toggleGroup(3)">Manhattan, NY</label>
+        <ion-icon color="success" (click)="toggleGroup(3)" [name]="isGroupShown(3) ? 'arrow-down' : 'arrow-forward'" class="txt-opacity"></ion-icon>
+        <!--<ion-icon color="success" (click)="toggleGroup(3)" [name]="isGroupShown(1) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>-->
+        <div *ngIf="isGroupShown(3)">
+          <ion-list>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #134</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #056</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #123</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #87</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #134</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #056</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #87</ion-label>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-item>
+      <ion-item text-wrap [ngClass]="{active: isGroupShown(4)}">
+        <label class="proxima_font" (click)="toggleGroup(4)">Houston, TX</label>
+        <ion-icon color="success" (click)="toggleGroup(4)" [name]="isGroupShown(4) ? 'arrow-down' : 'arrow-forward'" class="txt-opacity"></ion-icon>
+        <!--<ion-icon color="success" (click)="toggleGroup(4)" [name]="isGroupShown(1) ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>-->
+        <div *ngIf="isGroupShown(4)">
+          <ion-list>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #134</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #056</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #123</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #87</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #134</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #056</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox item-right></ion-checkbox>
+              <ion-label class="proxima_font" style="width: 40%; margin-right: 15px">Branch #87</ion-label>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <button class="blue_button_edged" type='submit'>DONE</button>
+</ion-footer>

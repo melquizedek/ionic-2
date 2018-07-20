@@ -1,0 +1,25 @@
+{
+    "TechnicianProfile": 
+    {
+        "EMP_ID_NO": "0003",
+        "EMP_INITIALS": "TECH1",
+        "EMP_LAST_NAME": "TECH1",
+        "INITIALS": "T1",
+        "CUST_ADDR_1": "ADDR_1",
+        "CUST_ADDR_2": "ADDR_1",
+        "CUST_ADDR_3": "ADDR_1",
+        "CUST_CITY_STATE": "",
+        "ZIP_CODE_9": "1908",
+        "PHONE_NO": "+63 987 987 9898",
+        "SHIFT_CODE": "NYTSHFT",
+        "STORE_NO": "STORE_1",
+        "COST_CTR_CODE": "COST_1",
+        "ORM_HOURS_BEGIN": "10pm",
+        "ORM_HOURS_END": "6am",
+        "MP_PRICING_STORE": "",
+        "MP_PRICING_COST_CTR": "",
+        "SPECIALTY 1": "DIGGING",
+        "SPECIALTY 2": "PREVENTIVE MAINTENANCE",
+        "REMARKS": "Junior Technician"
+    }
+}

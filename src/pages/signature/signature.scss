@@ -1,0 +1,36 @@
+page-signature {
+    ion-label {
+        div {
+            text-transform: none;
+            font-size: 0.8em;
+            padding: 1em 0;
+            white-space: normal;
+            text-align: justify;
+        }
+    }
+    .btn-transparent {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .txt-opacity {
+        color: rgba(0, 0, 0, 0.45);
+    }
+    .mybutton {
+        color: map-get($colors, aiit_blue_text) !important;
+    }
+    .mytitle {
+        text-align: center;
+    }
+    .mycontent {
+        background: rgba(0, 0, 0, 0.21);
+    }
+    .mydiv {
+        background: map-get($colors, aiit_white);
+        height: 50%;
+        .buttonclose {
+            background: map-get($colors, aiit_white);
+        }
+        .Sign_Pad {
+            border: black;
+        }
+    }
+}

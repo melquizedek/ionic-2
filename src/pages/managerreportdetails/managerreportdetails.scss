@@ -1,0 +1,68 @@
+page-managerreportdetails {
+    div.roundrect {
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+        overflow: hidden;
+        background-color: map-get($colors, aiit_completed_bg);
+        color: map-get($colors, aiit_completed_text);
+        padding: 0px 20px;
+        width: 100pt;
+        text-align: center;
+    }
+    div.centernote {
+        // -webkit-border-radius: 20px;
+        // -moz-border-radius: 20px;
+        // border-radius: 20px;
+        overflow: hidden; //background-color: #abe8b3;
+        color: map-get($colors, aiit_light_gray);
+        padding: 0px 20px;
+        width: 100%;
+        text-align: center;
+    }
+    ion-list {
+        ion-item {
+            background-color: transparent;
+            padding-left: 0;
+            position: relative;
+        }
+        ion-label {
+            div {
+                text-transform: none;
+                font-size: 1em;
+                padding: 0em;
+                white-space: normal;
+                text-align: justify;
+            }
+        }
+        ion-icon {
+            font-size: 1.8rem;
+            padding: 0;
+            text-align: center;
+            position: absolute;
+            right: 10px;
+            top: 3px;
+            &:before {
+                font-weight: bold;
+            }
+        }
+    }
+    .proxima_font {
+        font-family: 'proximanova';
+        font-weight: bold;
+        color: black;
+    }
+    .txt-opacity {
+        color: rgba(0, 0, 0, 0.45);
+    }
+    .text_style {
+        font-family: 'proximanova';
+        color: map-get($colors, aiit_dark_gray_text) !important;
+        font-size: 0.8em !important;
+        font-weight: bold !important;
+    }
+    .work-order {
+        font-family: 'proximanova';
+        color: map-get($colors, aiit_light_gray);
+    }
+}

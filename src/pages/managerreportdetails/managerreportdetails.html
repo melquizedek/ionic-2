@@ -1,0 +1,73 @@
+<!--
+  Generated template for the Managerreportdetails page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header no-border no-shadow>
+  <ion-navbar no-border-bottom transparent>
+    <ion-title>TASK DETAILS</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div padding>
+    <div *ngIf="serviceReport.COMPLETED == 'Yes' && serviceReport.REPORT_STATUS == 'approved'" class="roundrect"><b>COMPLETED</b></div>
+    <h1 class="proxima_font">{{serviceReport.TITLE}} </h1>
+    <h6 class="work-order">Work Order No. {{serviceReport.WORK_ORDER_NUMBER}}</h6>
+  </div>
+  <div *ngIf="serviceReport.COMPLETED == 'Yes' && serviceReport.REPORT_STATUS == 'review'" class=centernote>
+    This task is marked as completed
+  </div>
+  <hr />
+  <div>
+    <ion-list>    
+    <ion-item *ngFor="let cat of category; let i = index;" text-wrap [ngClass]="{active: isGroupShown(i)}" >
+      <span>
+      <label class="proxima_font" (click)="toggleGroup(i)">{{ cat.categoryname }} </label>
+      <ion-icon end color="success" (click)="toggleGroup(i)" [name]="isGroupShown(i) ? 'arrow-down' : 'arrow-forward'" class="txt-opacity"></ion-icon>
+      </span>      
+      <div *ngIf="isGroupShown(i)">
+        <ion-list> 
+          <ion-item *ngFor="let subcat of cat.subcategory; ">               
+              <ion-label class="text_style" >{{subcat.item}} :  </ion-label>            
+              <ion-label style="font-family:'proximanova';">{{subcat.value}} </ion-label> 
+          </ion-item>
+          <!--<form (ngSubmit)="updateComment()">-->
+           <!--<ion-item *ngIf="isGroupShown(7)">               
+              <ion-label class="common_label" style="width: 40%; margin-right: 15px">Comment</ion-label>            
+              <ion-input class="common_label"style="width: 40%; margin-right: 15px" [(ngModel)]="serviceReport.COMMENT"  name="comments"> </ion-input> 
+          </ion-item>-->
+          <!--</form>-->
+        </ion-list>
+      </div>
+    </ion-item>
+    <!--<form (ngSubmit)="updateComment()">-->
+    <ion-item>
+      <ion-label class="proxima_font" style="width: 30%; margin-right: 15px; color: black;">Comment</ion-label>
+      <ion-input class="proxima_font"style="width: 70%; margin-right: 15px" [(ngModel)]="serviceReport.REJECTNOTES"  name="comment"> </ion-input>
+    </ion-item>
+    <ion-item class="proxima_font" (click)="onFileattachmentsPagePage()">
+      <ion-label  style="width: 40%; margin-right: 15px">File Attachments</ion-label>
+      <ion-icon ios="ios-add" md="md-add"></ion-icon>
+    </ion-item>
+    <!--</form>-->
+    </ion-list>
+  </div>
+   <!--<ion-item class="proxima_font" (click)="onFileattachmentsPagePage()">
+        <ion-label  style="width: 40%; margin-right: 15px">File Attachments</ion-label>
+          <ion-icon ios="ios-add" md="md-add"></ion-icon>
+
+      </ion-item>-->
+
+  <button *ngIf="serviceReport.COMPLETED != 'Yes'" class="common_clear_button_blue_text" type='submit' (click)="completeTask(serviceReport.ID, serviceReport.WORK_ORDER_NUMBER)">Mark As Complete</button>
+  <button *ngIf="serviceReport.REPORT_STATUS != 'approved'" class="common_clear_button_gray_text" type='submit' (click)="rejectReport(serviceReport.ID)">Reject this report</button>
+  <button *ngIf="serviceReport.REPORT_STATUS != 'approved'" class="box_blue_button" type='submit' (click)="approveReport(serviceReport.ID)">Approve</button>
+
+</ion-content>
+
+
+
+
+

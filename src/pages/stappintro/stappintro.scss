@@ -1,0 +1,11 @@
+page-stappintro {
+    .master_content {
+        background-color: map-get($colors, aiit_dark_grey);
+    }
+    .button_container {
+        position: absolute;
+        bottom: 30px;
+        width: 100%;
+        padding: 0px
+    }
+}

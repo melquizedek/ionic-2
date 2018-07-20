@@ -1,0 +1,42 @@
+<ion-split-pane>
+  <ion-menu [content]="content" type="overlay">
+    <ion-list class="home-menu-list">
+      <ion-item class="list-title" no-lines>
+        <h1><span class="aiit_text">AIIT</span></h1>
+      </ion-item>
+      <ion-item *ngIf="userData" class="list-header" no-lines text-wrap>
+        <ion-avatar class="avatar_image" item-start>
+          <img [src]='(userData.EMP_PHOTO_URL ? userData.EMP_PHOTO_URL : "assets/images/default_profile.png")' >
+        </ion-avatar>
+        <p class="techName">{{userData.EMP_FIRST_NAME}}</p>
+        <p class="techEmail">{{userData.EMAIL}}</p>
+      </ion-item>
+      <ion-item-divider class="menu-title" no-lines>NAVIGATION</ion-item-divider>
+      <ion-item class="list-item" [hidden]="!isManager" (click)="onManageTask()">
+        <ion-label>Manage Tasks<span class="item-status">{{taskListNum}} Tasks</span></ion-label>
+      </ion-item>
+      <ion-item class="list-item" [hidden]="!isManager" (click)="onManageTechnicians()">
+        <ion-label>Manage Technicians<span class="item-status">{{techlistNum}}</span></ion-label>
+      </ion-item>
+      <ion-item class="list-item" [hidden]="!isManager" (click)="onReports()">
+        <ion-label>Reports</ion-label>
+      </ion-item>
+
+      <ion-item class="list-item" [hidden]="isManager" (click)="onMyTask()">
+        <ion-label>My Tasks <span class="item-status">{{notifN}}</span> </ion-label>
+      </ion-item>
+
+      <ion-item class="list-item" [hidden]="isManager" (click)="onMyServiceReport()">
+        <ion-label>My Service Reports</ion-label>
+      </ion-item>
+      <!-- <ion-item class="list-item" (click)="onHelp()">
+        <ion-label>Help</ion-label>
+      </ion-item> -->
+    </ion-list>
+    <button ion-button round outline class="logout-button" (click)="onLogout()">Sign out</button>
+
+  </ion-menu>
+
+  <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+  <ion-nav [root]="rootPage" main #content swipeBackEnabled="false"></ion-nav>
+</ion-split-pane>

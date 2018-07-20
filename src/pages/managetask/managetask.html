@@ -1,0 +1,118 @@
+<!--
+  Generated template for the ManageTask page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border no-shadow>
+  <ion-navbar no-border-bottom transparent>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>MANAGE TASKS</ion-title>
+  </ion-navbar>
+
+  <div class="aiit-div-segment-root">
+    <ion-segment [(ngModel)]="status">
+      <ion-segment-button class="aiit-segment-nav" value="Open">
+        OPEN
+        <span class="badge">{{OpenTaskCount}}</span>
+      </ion-segment-button>
+      <ion-segment-button class="aiit-segment-nav" value="Assigned">
+        ASSIGNED
+        <span class="badge">{{AssignedTaskCount}}</span>
+      </ion-segment-button>
+      <ion-segment-button class="aiit-segment-nav" value="Completed">
+        COMPLETED
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+</ion-header>
+
+<ion-content>
+
+
+  <div [ngSwitch]="status">
+    <ion-item class="task-list-sorting" *ngIf="(status == 'Open' && openTask.length) || (status == 'Assigned' && openTask.length) || (status == 'Completed' && completedTask.length)">
+      <ion-label id="sortFilter-label"><span class="sort_by">Sort By:</span></ion-label>
+      <ion-select id="selectFilter" [(ngModel)]="sortFilter" (ionChange)="onChange()">
+        <ion-option value="duedate">Due Date</ion-option>
+        <ion-option value="oldestcreated">Date Created - Oldest First</ion-option>
+        <ion-option value="newestcreated">Date Created - Newest First</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-list *ngSwitchCase="'Open'">
+      <ion-item class="task-list-item" *ngFor="let openTasks of openTask; let i = index" (click)="taskSelected(openTasks, 'Open')">
+        <p class="task-list-date">{{ openTasks.DATE_PROMISED_NUM | date: 'MM/dd/yyyy'}} <span class="{{openTasks.CSSBadges}}"> {{openTasks.Badge}}</span></p>
+        <p class="task-list-title">{{ openTasks.TASK_DESCRIPTION }}</p>
+        <p class="common-list-item-subtitle">{{ openTasks.TASK_COMMENTS }}</p>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'Assigned'">
+      <ion-item class="task-list-item" *ngFor="let assignedTasks of assignedTask; let i = index" (click)="taskSelected(assignedTasks, 'Assigned')">
+        <p class="task-list-date">{{ assignedTasks.DATE_PROMISED_NUM | date: 'MM/dd/yyyy'}}
+          <span class="{{assignedTasks.CSSBadges}}">
+          {{assignedTasks.Badge}}
+          </span>
+        </p>
+        <p class="task-list-title">{{ assignedTasks.TASK_DESCRIPTION }}</p>
+        <p class="common-list-item-subtitle">{{ assignedTasks.TASK_COMMENTS }}</p>
+        <!--p class="task-list-technician">{{ assignedTasks.technician }}</p-->
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'Completed'">
+      <ion-item class="task-list-item" *ngFor="let completedTasks of completedTask; let i = index" (click)="taskSelected(completedTasks, 'Completed')">
+        <p class="task-list-date">{{ completedTasks.DATE_PROMISED }}<span class="task-list-status-completed">  COMPLETED  </span></p>
+        <p class="task-list-title">{{ completedTasks.TASK_DESCRIPTION }}</p>
+        <p class="common-list-item-subtitle">{{ completedTasks.TASK_COMMENTS }}</p>
+        <!--p class="task-list-technician">{{ completedTasks.technician }}</p-->
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="status == 'Open' && !assignedTask.length" class="empty-state">
+    <p>No tasks found.<br />
+      <span style="font-size: 12px;">Create a task by tapping the + button</span></p>
+  </div>
+
+  <div *ngIf="status == 'Assigned' && !assignedTask.length" class="empty-state">
+    <p>No task found.<br />
+      <span style="font-size: 12px;">Create a task or assign an open task<br />to a technician.</span><br /><br />
+      <button class="empty_state_button_fixed_width" type='submit' (click)="addNewTask()">Create a task</button><br />
+      <button class="empty_state_button_fixed_width" type='submit' (click)="viewOpenTasks()">Go to Open tasks</button>
+    </p>
+  </div>
+
+  <div *ngIf="status == 'Completed' && !completedTask.length" class="empty-state">
+    <p>No tasks completed.<br /><br />
+      <button class="empty_state_button_fixed_width" type='submit' (click)="viewAssignedTasks()">View All Assigned Tasks</button></p>
+  </div>
+
+
+  <ion-fab class="common-fab-container">
+    <button ion-fab class="common-fab-button" (click)="addNewTask(status)"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+</ion-content>
+<ion-footer>
+
+  <ion-segment [(ngModel)]="displaymode" class="task-segment-container">
+    <ion-segment-button class="taskdisplaymode" value="list">
+      <img class="segment-footer-icon-image" src="assets/images/list_segment_icon.png">
+    </ion-segment-button>
+    <ion-segment-button class="taskdisplaymode" value="calendar" (click)="calendarView()">
+      <img class="segment-footer-icon-image" src="assets/images/calendar_segment_icon.png">
+    </ion-segment-button>
+  </ion-segment>
+
+
+  <div class="report-notification" [hidden]="!notificationsExist()">
+    <p><img height="14" width="14" src="assets/images/notifIcon.png">&nbsp;&nbsp;<b>Service Report</b></p>
+    <p>You have {{reviewReport.length}} remaining reports to review.&nbsp;<button class="view-report" type='submit' (click)="viewServiceReports()"><u>View</u></button></p>
+    <span class="close"><button type='submit' (click)="closeNotifPanel()">x</button></span>
+  </div>
+</ion-footer>

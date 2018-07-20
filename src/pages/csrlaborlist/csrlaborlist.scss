@@ -1,0 +1,64 @@
+page-csrlaborlist {
+    .text_style {
+        margin-top: 10px;
+        font-family: 'proximanova';
+        color: map-get($colors, aiit_light_gray);
+        font-size: 11px;
+        text-transform: uppercase;
+    }
+    .text_style_title {
+        font-family: 'proximanova';
+        color: map-get($colors, aiit_dark_grey) !important;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .btn_style {
+        width: 100%;
+        border-color: map-get($colors, aiit_light_gray);
+        border-style: solid;
+        background-color: map-get($colors, aiit_white);
+        border-width: 1px;
+        color: map-get($colors, aiit_blue_text);
+    }
+    .btn_style2 {
+        border-color: map-get($colors, aiit_light_gray);
+        border-style: solid;
+        background-color: map-get($colors, aiit_light_gray);
+    }
+    .col_design {
+        border-color: black;
+        border-style: solid;
+    }
+    .col_design1 {
+        width: 70%;
+        border-color: blueviolet;
+        border-style: solid;
+    }
+    .col_design2 {
+        width: 30%;
+        border-color: blueviolet;
+        border-style: solid;
+    }
+    .buttonclose {
+        width: 10px;
+        height: 10px;
+    }
+    .btn-end {
+        position: absolute;
+        right: 0 !important;
+        top: -30% !important;
+        text-align: center;
+    }
+    .btn-mid {
+        position: absolute;
+        right: 10px;
+        top: -30% !important;
+        text-align: center;
+    }
+    .btn-opacity {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .txt-opacity {
+        color: rgba(0, 0, 0, 0.45);
+    }
+}

@@ -1,0 +1,22 @@
+<ion-header no-border no-shadow>
+  <ion-navbar no-border-bottom transparent>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons right>
+      <button ion-button list (click)="listView()">
+        <ion-icon name="list"></ion-icon>
+      </button>
+      <button ion-button calendar (click)="calendarView()">
+        <ion-icon name="calendar"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-tabs [selectedIndex]="mySelectedIndex">
+  <ion-tab [root]="tab1Root" tabTitle="Open"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Assigned"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Completed"></ion-tab>
+</ion-tabs>

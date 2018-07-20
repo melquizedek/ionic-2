@@ -1,0 +1,49 @@
+{
+    "TASK_LIST" : 
+    [
+        { 
+            "TASK_DESC" : "Task1",
+            "CUST_NAME" : "XYZ Contruction Company",
+            "WO_NO" : "WO00000001",
+            "EMP_ID_NO" : "0003",
+            "EMP_INITIALS" : "TECH1", 
+            "REPORTS" : 
+            [        
+                {
+                    "WO_NO" : "WO00000001",
+                    "REPORT_ID" : "REP0000001",
+                    "REPORT_STATUS" : "APPROVED",
+                    "REPORT_DESCRIPTION" : "Report 1 for XYZ Contruction Company"                
+                },
+                {
+                    "WO_NO" : "WO00000001",
+                    "REPORT_ID" : "REP0000002",
+                    "REPORT_STATUS" : "APPROVED",
+                    "REPORT_DESCRIPTION" : "Report 2 for XYZ Contruction Company"               
+                }        
+            ]
+        },
+        { 
+            "TASK_DESC" : "Task2",
+            "CUST_NAME" : "NJY Company",
+            "WO_NO" : "WO00000002",
+            "EMP_ID_NO" : "0003",
+            "EMP_INITIALS" : "TECH1",
+            "REPORTS" : 
+            [        
+                {
+                    "WO_NO" : "WO00000002",
+                    "REPORT_ID" : "REP0000001",
+                    "REPORT_STATUS" : "REJECTED",
+                    "REPORT_DESCRIPTION" : "Report 1 for NJY Company"                
+                },
+                {
+                    "WO_NO" : "WO00000002",
+                    "REPORT_ID" : "REP0000002",
+                    "REPORT_STATUS" : "APPROVED",
+                    "REPORT_DESCRIPTION" : "Report 2 for NJY Company"               
+                }        
+            ]
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+<!--
+  Generated template for the CsrlaborlistPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border no-shadow>
+  <ion-navbar no-border-bottom transparent>
+    <ion-title>LABOR
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button clear color="dark" item-right (click)="dismiss()" end>
+          <img src="../assets/images/arrowdown.png" width="20px" class="btn-opacity">
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+<!-- <div *ngFor="let o of LABOR_ENTRY_KEYS">{{ x.EMP_ID }}</div> -->
+<!-- {{serviceReport.LABOR_ENTRY_KEYS}} -->
+<!-- <div *ngFor=" let j of LaborEntry123"> -->
+<!-- {{LaborEntry123}} -->
+<!-- </div> -->
+<!-- {{serviceReport.LABOR_ENTRY_KEYS.}} -->
+
+
+<ion-card *ngFor="let x of LaborEntry123">
+  <ion-list>
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-8><span class="text_style">Employee ID:</span> <br><span class="text_style_title">{{ x }}</span></ion-col>
+        <ion-col>
+          <!---->
+          <ion-col class="btn-mid"><ion-icon item-end name="ios-browsers-outline" style="zoom:2.0;" class="txt-opacity"></ion-icon></ion-col>
+        </ion-col>
+        <ion-col>
+          <!---->
+          <ion-col class="btn-end"><ion-icon item-end name="ios-create-outline" style="zoom:2.0;" class="txt-opacity"></ion-icon></ion-col>
+        </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-card>
+
+
+
+
+<button ion-button class="btn_style" (click)="csrlaborModal()"> + Add New Entry </button>
+
+</ion-content>

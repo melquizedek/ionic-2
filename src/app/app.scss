@@ -1,0 +1,383 @@
+// http://ionicframework.com/docs/v2/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+@font-face {
+    font-family: 'oswaldregular';
+    src: url('../assets/fonts/Oswald-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'oswaldregular';
+    src: url('../assets/fonts/Oswald-Light.ttf') format('truetype');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'oswaldregular';
+    src: url('../assets/fonts/Oswald-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proximanova';
+    src: url('../assets/fonts/proxima-nova-semibold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proximanova';
+    src: url('../assets/fonts/proxima-nova-bold.ttf') format('truetype');
+    font-weight: bolder;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proximanova';
+    src: url('../assets/fonts/proxima-nova.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dinmedium';
+    src: url('../assets/fonts/DIN_Alternate_Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'knockoutregular';
+    src: url('../assets/fonts/Knockout_HTF50Welterweight_Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.common_blue_button {
+    @extend .common_button_template_title_style;
+    border: 1px solid map-get($colors, aiit_blue_active);
+    background-color: map-get($colors, aiit_blue_segment) !important;
+    width: 100%;
+    color: white;
+}
+
+.common_blue_button:active {
+    border-top-color: map-get($colors, aiit_blue_active);
+    background-color: map-get($colors, aiit_blue_active) !important;
+    color: white;
+}
+
+.common_button_template_title_style {
+    border-radius: 4px;
+    min-height: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-size: 19px;
+    font-family: 'proximanova';
+}
+
+.common_clear_button_gray_text {
+    border-radius: 4px;
+    min-height: 50px;
+    text-decoration: none;
+    vertical-align: middle;
+    font-size: 12px;
+    font-family: 'oswaldregular';
+    border: 1px solid gray;
+    background-color: white !important;
+    width: 100%;
+    color: gray; // align-items: center;
+    justify-content: center;
+    margin-bottom: 5px
+}
+
+.common_clear_button_blue_text {
+    border-radius: 4px;
+    min-height: 50px;
+    text-decoration: none;
+    vertical-align: middle;
+    font-size: 12px;
+    font-family: 'oswaldregular';
+    border: 1px solid gray;
+    background-color: white !important;
+    width: 100%;
+    color: map-get($colors, aiit_blue_segment) !important; // align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.empty_state_button_fixed_width {
+    border-radius: 4px;
+    min-height: 50px;
+    text-decoration: none;
+    vertical-align: middle;
+    font-size: 12px;
+    font-family: 'oswaldregular';
+    border: 1px solid gray;
+    background-color: white !important;
+    width: 100%;
+    color: map-get($colors, aiit_blue_segment) !important; // align-items: center;
+    justify-content: center;
+    margin-bottom: 5px
+}
+
+.box_blue_button {
+    min-height: 50px;
+    text-decoration: none;
+    vertical-align: middle;
+    font-size: 19px;
+    font-family: 'oswaldregular';
+    border: 1px solid map-get($colors, aiit_blue_active);
+    background-color: map-get($colors, aiit_blue_segment) !important; //color: map-get($colors, aiit_brown_plain);
+    width: 100%;
+    color: white;
+}
+
+.common_text_field {
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    font-family: 'proximanova';
+}
+
+.common_label {
+    font-family: 'oswaldregular';
+}
+
+ion-header {
+    .toolbar-content {
+        width: 100%;
+        text-align: center;
+        pointer-events: none;
+    }
+    .toolbar-title {
+        color: black;
+        font-size: 2rem;
+        font-family: 'knockoutregular';
+    }
+}
+
+.md {
+    ion-header {
+        .toolbar-content {
+            position: absolute;
+        }
+    }
+}
+
+.title_text_black {
+    font-family: 'oswaldregular';
+    color: #0C0C0B;
+    text-decoration: none;
+    font-size: 33px;
+    text-transform: uppercase !important;
+}
+
+.content_text_black_stable {
+    font-family: 'proximanova';
+    opacity: 0.4;
+    color: #0C0C0B;
+    font-size: 17px;
+}
+
+.text {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.borderTop {
+    border-top: 1px solid lightgray;
+    margin: auto;
+    padding: 5px;
+}
+
+.borderTopBottom {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    margin: auto;
+    padding: 5px;
+    .float-button {
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        width: 30px;
+        padding: 30px;
+        font-size: 40px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+    }
+}
+
+.ios,
+.md,
+.wp {
+    ion-navbar {
+        border-bottom: solid map-get($colors, aiit_gray_line) 1px;
+    }
+    .aiit-div-segment-root {
+        padding: 12px;
+        border-bottom: solid map-get($colors, aiit_gray_line) 1px !important;
+    }
+    .aiit-segment-nav {
+        color: map-get($colors, aiit_dark_gray_text);
+        font-family: 'dinmedium';
+        font-size: 1.3rem;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        text-align: center;
+        vertical-align: middle;
+        border-radius: 10px;
+        box-shadow: none !important;
+        border-color: rgba(0, 0, 0, 0) !important;
+        .badge {
+            color: white;
+            background-color: gray;
+            border-radius: 20px;
+            font-family: 'proximanova';
+            font-weight: bold;
+            font-size: 1.3rem;
+            text-align: center;
+            vertical-align: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+    }
+    .aiit-segment-nav:first-of-type {
+        color: map-get($colors, aiit_dark_gray_text);
+        margin-right: 3px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+    .aiit-segment-nav:not(:first-of-type) {
+        color: map-get($colors, aiit_dark_gray_text);
+        margin-right: 3px;
+        margin-left: 3px;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .aiit-segment-nav:last-of-type {
+        color: map-get($colors, aiit_dark_gray_text);
+        margin-left: 3px;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+    .aiit-segment-nav.segment-activated {
+        background-color: map-get($colors, aiit_blue_segment);
+        color: white;
+        .badge {
+            background-color: #3C5BB6;
+        }
+    }
+}
+
+.segment-footer-icon-image {
+    width: 20px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.taskdisplaymode.segment-activated {
+    background-color: map-get($colors, aiit_blue_light) !important;
+    border-radius: 16px !important;
+}
+
+.taskdisplaymode.segment-button {
+    border-bottom: none !important;
+    border-style: none;
+    height: 35px;
+ 
+}
+
+.task-segment-container {
+    padding: 4px;
+    background-color: map-get($colors, aiit_dark_gray_text);
+    width: 85px;
+    height: auto;
+    border-radius: 19px;
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    z-index: 2;
+}
+
+.common-list-item-title {
+    font-size: 15px !important;
+    font-family: 'proximanova';
+    font-weight: bolder;
+    color: map-get($colors, aiit_dark_gray_text);
+}
+
+.common-list-item-subtitle {
+    font-size: 15px !important;
+    font-family: 'proximanova';
+    font-weight: normal;
+    color: map-get($colors, aiit_dark_gray_text);
+}
+
+.avatar-list-item-big {
+    height: 60px;
+    width: 60px;
+    border: 3px solid map-get($colors, aiit_white);
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.common-fab-button {
+    background-color: map-get($colors, aiit_blue_light);
+}
+
+.common-fab-container {
+    right: 15px;
+    bottom: 15px;
+}
+
+.task-list-status-common {
+    border-width: 2px;
+    font-family: 'proximanova';
+    border-radius: 40px 40px;
+    position: absolute;
+    right: 20px;
+    font-size: 10px !important;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-weight: bolder;
+    line-height: 20px;
+    text-align: center;
+    width: auto;
+}
+
+.blue_button_edged {
+    @extend .common_blue_button;
+    border: 0;
+    font-family: 'dinmedium';
+    font-size: 16px;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none !important;
+    border-color: rgba(0, 0, 0, 0) !important;
+    outline: none !important;
+}

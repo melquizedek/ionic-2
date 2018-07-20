@@ -1,0 +1,34 @@
+
+<ion-header no-border no-shadow>
+  <ion-navbar no-border-bottom transparent>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding class="main-container">
+  <div class="list">
+    <label class="drop-down-list">
+      <div class="drop-down-label">Sort: 
+        <select class="drop-down-items">
+          <option selected>Sort 1</option>
+          <option>Sort 2</option>
+          <option>Sort 3</option>
+        </select>
+      </div>
+    </label>
+  </div>
+
+  <ion-list>
+    <ion-item class="task-list-item" *ngFor="let task of tasks; let i = index" (click)="taskSelected(i)">
+      <p class="task-list-date">{{ task.datePromised }}</p>
+      <p class="task-list-title">{{ task.taskName }}</p>
+      <p class="task-list-description">{{ task.description }}</p>
+    </ion-item>
+  </ion-list>
+
+<ion-fab class="common-fab-container" >
+    <button ion-fab class="common-fab-button" (click)="addNewTask()">+</button>
+  </ion-fab>
+
+</ion-content>

@@ -1,0 +1,108 @@
+<!--
+  Generated template for the ManageTask page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border no-shadow>
+  <ion-navbar no-border-bottom transparent>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>MY TASKS</ion-title>
+  </ion-navbar>
+
+  <div class="aiit-div-segment-root">
+    <ion-segment [(ngModel)]="status">
+      <ion-segment-button class="aiit-segment-nav" value="Assigned">
+        ASSIGNED
+        <span class="badge">{{notifN}}</span>
+      </ion-segment-button>
+      <ion-segment-button class="aiit-segment-nav" value="Completed">
+        COMPLETED
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+
+</ion-header>
+
+<ion-content>
+
+
+  <div [ngSwitch]="status">
+    <ion-item class="task-list-sorting" *ngIf="(status == 'Assigned' && myAssignedTask.length) ||  (status == 'Completed' && myCompletedTask.length)">
+      <ion-label id="sortFilter-label">Sort By</ion-label>
+      <ion-select id="selectFilter" [(ngModel)]="sortFilter" (ionChange)="onChange()">
+        <ion-option value="duedate">Due Date</ion-option>
+        <ion-option value="datecompleted">Date Completed</ion-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <div [ngSwitch]="status">
+    <ion-list *ngSwitchCase="'Assigned'">
+      <ion-item class="task-list-item" *ngFor="let assignedTask of myAssignedTask; let i = index" (click)="taskSelected(assignedTask)">
+        <p class="task-list-date">
+          {{ assignedTask.DATE_PROMISED | date: 'MM/dd/yyyy'}}
+          <span class="{{assignedTask.CSSBadges}}">{{assignedTask.StatusBadges}}
+          </span>
+        </p>
+        <p class="common-list-item-title">{{ assignedTask.TASK_DESCRIPTION }}</p>
+        <p class="common-list-item-subtitle">{{ assignedTask.TASK_COMMENTS }}</p>
+        <p>
+          <span class="created-by">Created by</span>
+          <span class="task-list-technician">{{ assignedTask.EMPLOYEE_LAST_NAME }}</span>
+        </p>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'Completed'">
+      <ion-item class="task-list-item" *ngFor="let myCompletedTasks of myCompletedTask; let i = index" (click)="taskSelected(myCompletedTasks)">
+        <p class="task-list-date">{{ myCompletedTasks.DATE_PROMISED }} <span class="task-list-status-completed">  COMPLETED  </span></p>
+        <p class="common-list-item-title">{{ myCompletedTasks.TASK_DESCRIPTION }}</p>
+        <p class="common-list-item-subtitle">{{ myCompletedTasks.TASK_COMMENTS }}</p>
+        <p class="created-by">Created by</p>
+        <p class="task-list-technician">{{ myCompletedTasks.EMPLOYEE_LAST_NAME }}</p>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="status == 'Assigned' && !myAssignedTask.length" class="empty-state">
+    <p>No tasks found.<br />
+      <span style="font-size: 12px;">You have no assigned tasks.</span></p>
+  </div>
+
+  <div *ngIf="status == 'Completed' && !myCompletedTask.length" class="empty-state">
+    <p>No tasks found.<br />
+      <span style="font-size: 12px;" class="empty-state">You don't have any completed tasks.</span></p>
+  </div>
+
+</ion-content>
+<ion-footer>
+  <!--<ion-fab style="bottom: 15px; left: 15px">-->
+
+  <ion-segment [(ngModel)]="displaymode" class="task-segment-container">
+    <ion-segment-button class="taskdisplaymode" value="list">
+      <img class="segment-footer-icon-image" src="assets/images/list_segment_icon.png">
+    </ion-segment-button>
+    <ion-segment-button class="taskdisplaymode" value="calendar" (click)="calendarView()">
+      <img class="segment-footer-icon-image" src="assets/images/calendar_segment_icon.png">
+    </ion-segment-button>
+  </ion-segment>
+
+  <!--</ion-fab>-->
+  <div *ngIf="notifN >= 2 && notifExist" class="report-notification">
+    <p><img height="14" width="14" src="assets/images/notifIcon.png">&nbsp;&nbsp;<b>Notifications</b></p>
+    <p *ngIf="rejectedReport.length > 0">Service report rejected.<button class="view-report" type='submit' (click)="viewServiceReports()"><u>View</u></button></p>
+    <p *ngIf="newTask.length > 0">New task(s) assigned to you.<button class="view-report" type='submit' (click)="closeNotifPanel()"><u>View</u></button></p>
+    <span class="close"><button type='submit' (click)="closeNotifPanel()">x</button></span>
+  </div>
+  <div *ngIf="notifN == 1 && notifExist" class="report-notification-short">
+    <p><img height="14" width="14" src="assets/images/notifIcon.png">&nbsp;&nbsp;<b>Notifications</b></p>
+    <p *ngIf="rejectedReport.length > 0">Service report rejected.<button class="view-report" type='submit' (click)="viewServiceReports()"><u>View</u></button></p>
+    <p *ngIf="newTask.length > 0">New task(s) assigned to you.<button class="view-report" type='submit' (click)="closeNotifPanel()"><u>View</u></button></p>
+    <span class="close"><button type='submit' (click)="closeNotifPanel()">x</button></span>
+  </div>
+</ion-footer>

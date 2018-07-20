@@ -1,0 +1,63 @@
+page-login {
+    .design_card {
+        border-radius: 5px;
+        padding: 20px;
+        width: 90%;
+        height: 80px;
+        box-shadow: 3px 4px 2px map-get($colors, aiit_light_gray);
+    }
+    .slide_cont {
+        align-content: center;
+    }
+    .image_card {
+        border-radius: 5px;
+        width: 90%;
+        box-shadow: 3px 4px 2px map-get($colors, aiit_light_gray);
+    }
+    .slide_card {
+        margin: 0 auto;
+        max-width: 340px;
+    }
+    .text_card {
+        font-family: 'proximanova';
+        opacity: 0.7;
+        color: map-get($colors, aiit_white);
+        font-size: 16px;
+    }
+   
+    .background_card {
+        background: linear-gradient(to top left, map-get($colors, aiit_blue_text) 33%, map-get($colors, aiit_grad_lightblue));
+        height: 50%;
+    }
+    .aiit_text {
+        font-family: 'knockoutregular';
+        color: map-get($colors, aiit_white);
+        font-size: 30px;
+        float: left;
+        padding: 22px;
+        margin-bottom: -20em;
+    }
+    .login_text {
+        font-family: 'proximanova';
+        color: map-get($colors, aiit_light_gray);
+        font-size: 18px;
+    }
+    .forgot_text {
+        font-family: 'proximanova';
+        color: map-get($colors, aiit_blue_text);
+        font-size: 16px;
+        padding: 18px;
+    }
+  
+    .swiper-pagination-bullet {
+        background: map-get($colors, aiit_white);
+        opacity: 0.5;
+    }
+    ion-slide {
+        padding-bottom: 3em;
+    }
+    .swiper-pagination-bullet-active {
+        opacity: 1;
+        background: map-get($colors, aiit_white);
+    }
+}

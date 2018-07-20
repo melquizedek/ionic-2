@@ -1,0 +1,22 @@
+page-calendar {
+
+    td[_ngcontent-c1], th[_ngcontent-c1], .table-bordered[_ngcontent-c1]{
+        border: 0 !important;
+    }
+
+    .monthview-primary-with-event[_ngcontent-c1] {
+        background-color: map-get($colors, aiit_blue_segment) ;   
+    }
+
+    .monthview-selected[_ngcontent-c1] {
+        background-color: map-get($colors, aiit_completed_text) ;
+    }
+
+    .monthview-current[_ngcontent-c1] {
+        background-color: map-get($colors, aiit_blue_light) ;
+    }
+
+    .event-detail-container[_ngcontent-c0]{
+        border: 0 !important;
+    }
+}

@@ -1,0 +1,19 @@
+page-mytechnician {
+    .file_name {
+        font-family: 'proximanova';
+        color: map-get($colors, aiit_dark_grey) !important;
+        font-size: 20px;
+        font-weight: bold;
+        display: block;
+    }
+    .details {
+        font-family: 'proximanova';
+        color: map-get($colors, aiit_light_gray);
+        text-decoration: none;
+        font-size: 12px;
+        display: block;
+    }
+    .avatar {
+        margin-right: 10px;
+    }
+}

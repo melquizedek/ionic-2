@@ -1,0 +1,238 @@
+<!--
+  Generated template for the Taskdetails page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.-->
+
+<ion-header no-border no-shadow>
+  <ion-navbar no-border-bottom transparent>
+    <ion-buttons right>
+      <!--<button ion-button status (click)="togglePrompt('checkmark')" *ngIf="task.COMPLETED_IND == 'N'">
+        <ion-icon name="checkmark-circle-outline" isActive="false"></ion-icon>
+      </button>-->
+    </ion-buttons>
+    <ion-title>TASK DETAILS</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding="5px">
+  <p class="{{task.CSSBadges}}">{{task.StatusBadges}}</p><br /><br />
+  <!-- header -->
+  <h3 class="proxima_font"> {{ task.TASK_DESCRIPTION }} </h3>
+  <label>Created by: <span class="em-task-creator">{{ task.CREATED_BY }}</span> on {{task.TRANS_TIMESTAMP| date: 'dd MMM'}} at {{task.TRANS_TIMESTAMP| date: 'shortTime'}}</label>
+  
+  <ion-grid *ngIf="accountType === '2'">
+      <ion-row class="row">
+          <ion-col>
+            <button ion-button outline (click)="completeThisTask()">
+                <ion-icon ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>&nbsp;
+                Complete this Task
+            </button>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+  
+  <ion-row *ngIf="accountType === '1'">
+    <ion-col>Make: {{task.COST_CENTER_CODE}}</ion-col>
+    <ion-col>Serial NO: {{task.EQPMNF_SERIAL_NUM}}</ion-col>
+    <ion-col>Model:{{task.EQUIP_MNFCTR_MODEL}}</ion-col>
+  </ion-row>
+
+  <!--timestamp dummy for now {{task.TRANS_TIMESTAMP}}-->
+  <div *ngIf="accountType === '1'">
+    <hr/>
+    <ion-grid>
+      <ion-row class="row">
+        <ion-col class="font_color">
+          <img src="assets/images/markCompleteIcon.png" height="30px" (click)="signcomplete()"><br /> Complete
+        </ion-col>
+        <ion-col class="font_color">
+          <img src="assets/images/addTechnicianIcon.png" height="30px" (click)="selectTechnician()"><br /> Add Technician
+        </ion-col>
+        <ion-col class="font_color">
+          <img src="assets/images/moreIcon.png" width="30px" ng-click=""><br /><br/>
+          <span class="txtMore">More</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="borderTop">
+    <label> 
+             <img width="10px" src="assets/images/startdate.png" class="margin-right"> 
+            <!--<img width="10px" height="10px" src="assets/images/startdate.png" style="margin-right: 20%"> -->
+            <b class="txt-opacity margin-right"> Start Date: </b> {{task.PROMISE_START_DATE_NUM | date: 'MM/dd/yyyy'}}
+            <!--<b> Start Date: </b>    {{task.PROMISE_START_DATE}}  -->
+            <!-- {{task.PROMISE_START_DATE | date}}   -->
+          </label><br/>
+  </div>
+  <div class="borderTopBottom">
+    <label> 
+            <img width="10px" src="assets/images/enddate.png" class="margin-right">
+            <!--<img width="10px" height="10px" src="assets/images/enddate.png" style="margin-right: 20%" >-->
+            <b class="txt-opacity margin-right"> End Date: </b> {{task.DATE_PROMISED_NUM  | date: 'MM/dd/yyyy'}} 
+            <!--<b> End Date: </b>     {{task.DATE_PROMISED}}  -->
+            <!-- {{task.DATE_PROMISED | date:'yMMMd'}}   -->
+          </label> <br/>
+  </div><br/>
+
+
+  <!-- assigned/created -->
+  <div [ngSwitch]="accountType">
+    <div *ngSwitchCase="1">
+      <label class="proxima_font" style="margin-bottom: 35px"> <b> Technicians Assigned: </b></label>
+      <ion-list>
+        <ion-item>
+          <!-- <label class="common_label" >{{ task.EMPLOYEE_INITIALS }}</label> <br/><br/> -->
+          <!-- <ion-card class="card_design" *ngFor="let x of task.EMPLOYEE_INITIALS"> -->
+          <ion-card class="card_design">
+            <ion-card-content>
+              <div class="row text-center">
+                <ion-avatar class="avatar">
+                  <img style="vertical-align: middle;" width="20px" height="20px" src="assets/images/default_profile.png">
+                </ion-avatar>
+                <!-- {{ x }} -->
+                {{ task.EMPLOYEE_INITIALS }}
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+      </ion-list>
+    </div>
+    <ion-item *ngSwitchCase="2">
+      <label class="proxima_font">Created By: {{ task.CREATED_BY }} </label> <br/><br/>
+    </ion-item>
+  </div>
+
+  <!-- task description -->
+  <div class="row" style="margin-bottom: 20px">
+    <div class="col text-center">
+      <label class="proxima_font"> <b>Cost Ctr Code:</b> </label><br/>
+      <label class="body">{{task.COST_CENTER_CODE}}</label>
+    </div>
+
+    <div class="col text-center">
+      <label class="proxima_font"> <b>Store No.: </b> </label><br/>
+      <label class="body">{{task.STORE_NUMBER}}</label>
+    </div>
+  </div>
+
+  <div class="row" style="margin-bottom: 20px">
+    <div class="col text-center">
+      <label class="proxima_font"> <b>Wo Seg. No.:</b> </label><br/>
+      <label class="body">{{task.WORK_ORD_SEG_NUM}}</label>
+    </div>
+
+    <div class="col text-center">
+      <label class="proxima_font"> <b>WO Opn No.:  </b> </label><br/>
+      <label class="body">{{task.WORK_ORD_OPER_NUM}}</label>
+    </div>
+  </div>
+
+  <div class="row" style="margin-bottom: 20px">
+    <div class="col text-center">
+      <label class="proxima_font"> <b>Transaction Status:</b> </label> <br/>
+      <label class="body">  {{task.ACTIVITY_INDICATOR}} </label>
+    </div>
+
+    <div class="col text-center">
+      <label class="proxima_font"> <b>Transaction Type:</b> </label> <br/>
+      <label class="body">  {{task.TRANSACTION_TYPE}}  </label>
+    </div>
+  </div>
+
+  <div class="row" style="margin-bottom: 20px">
+    <div class="col text-center">
+      <label class="proxima_font"> <b>Work Order No.:</b> </label><br/>
+      <label class="body">  {{task.WORK_ORDER_NUMBER}}  </label>
+    </div>
+
+    <div class="col text-center">
+      <label class="proxima_font"> <b>Event ID: {{task.eventId}} </b> </label><br/>
+      <label class="body">  {{task.TASK_LOCATION}} </label>
+    </div>
+  </div>
+
+  <div class="borderTop">
+    <label class="proxima_font"> <b>Urgency Code:</b> </label> <br/>
+    <label class="body"> {{task.URGENCY_CODE}}  </label> <br/>
+  </div>
+
+  <div class="borderTop">
+    <label class="proxima_font"> <b>Customer Name: </b>  </label> <br/>
+    <label class="body"> {{task.CUSTOMER_NAME}}  </label> <br/>
+  </div>
+
+  <div class="borderTop">
+    <label class="proxima_font"> <b>Customer Equipment Number: </b> </label> <br/>
+    <label class="body"> {{task.TASK_DESCRIPTION}} </label> <br/>
+  </div>
+
+  <div class="borderTop">
+    <label class="proxima_font"> <b>Equipment Mfr Code: </b>  </label> <br/>
+    <label class="body">  {{task.EQUIP_MANFCTUR_CD}} </label> <br/>
+  </div>
+
+  <div class="borderTop">
+    <label class="proxima_font"> <b>Equipment Mfr Model: </b> </label> <br/>
+    <label class="body"> {{task.EQUIP_MNFCTR_MODEL}}  </label> <br/>
+  </div>
+
+  <div class="borderTop">
+    <label class="proxima_font"> <b>Equipment Serial Number: </b> </label> <br/>
+    <label class="body"> {{task.EQPMNF_SERIAL_NUM}}  </label> <br/>
+  </div>
+
+  <div class="borderTop">
+    <label class="proxima_font"> <b>Service Contact Phone: </b> </label> <br/>
+    <label class="body"> {{task.contact}}  </label> <br/>
+  </div>
+
+  <div class="borderTop">
+    <label class="proxima_font"> <b>Duration: </b> </label> <br/>
+    <label class="body"> {{task.DURATION}}  </label> <br/>
+  </div>
+
+  <div class="borderTop">
+    <label class="proxima_font"> <b>Task Location: </b> </label> <br/>
+    <label class="body">  {{task.TASK_LOCATION}} </label> <br/>
+  </div>
+
+  <div class="borderTop">
+    <label class="proxima_font"> <b>Task Source: </b> </label> <br/>
+    <label class="body"> {{task.TASK_SOURCE}}  </label> <br/>
+  </div>
+
+  <div class="borderTopBottom">
+    <label class="proxima_font"> <b>Task Description:</b> </label> <br/>
+    <label class="body">  {{task.TASK_DESCRIPTION}} </label> <br/>
+  </div><br/><br/>
+
+
+  <ion-grid *ngIf="accountType === '1'">
+    <ion-row>
+      <ion-col>
+        <button class="btn_file" type='submit' (click)="goToDelete(task.taskID)">Delete</button>
+      </ion-col>
+      <ion-col>
+        <button class="btn_file" type='submit' (click)="goToEdit()">Edit</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
+
+</ion-content>
+
+<ion-footer>
+
+
+  <div class="empty-state" *ngIf="askToVerify()">
+    <p><span style="font-weight: bold;">Mark Task As Complete?</span><br />
+      <span style="font-size: 11px;">Are you sure you want to mark this task as Complete?</span><br />
+      <button class="action-button-left" type='submit' (click)="togglePrompt('cancel')">Cancel</button>
+      <button class="action-button-right" type='submit' (click)="updateStatus(task)">Task Completed</button></p>
+  </div>
+</ion-footer>

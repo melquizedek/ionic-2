@@ -1,0 +1,68 @@
+<!--
+  Generated template for the FileattachmentsPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border no-shadow>
+  <ion-navbar no-border-bottom transparent>
+    <ion-title>File Attachments</ion-title>
+    <ion-buttons end item-end item-right>
+      <button ion-button (click)="dismiss()" class="btn-opacity">
+        <img src="assets/images/arrowdown.png" width="20px">
+      </button>
+    </ion-buttons>
+    <!--<ion-buttons end>
+      <button (click)="dismiss()">
+       <ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon></button></ion-buttons>-->
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      You currently have {{filedatanum}} attachments
+    </ion-list-header>
+    <ion-item *ngFor="let x of FileData">
+      <ion-label>
+        <p class="file_name">{{ x.filename }}</p>
+        <p class="details">Modified: {{ x.filedate | date:'medium'}} Size:{{ x.filesize }}</p>
+      </ion-label>
+      <ion-checkbox item-right></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button class="btn_file">
+    <div align="center">
+      <label>+ Add a file attachment<input type="file" #fileInput class="hidethis" (change)="ImageUpload($event.target.files[0])">
+      </label>
+    </div>
+  </button>
+</ion-content>
+
+<!--<ion-content padding>
+
+    <ion-label>You currently have {{filedatanum}} attachments</ion-label>
+  <ion-item *ngFor="let x of FileData">  
+  <ion-checkbox item-right></ion-checkbox>
+    <ion-label>
+      <div>
+        <p class="file_name">{{ x.filename }}</p>
+        <p class="details">Modified: {{ x.filedate | date:'medium'}} Size:{{ x.filesize }}</p>
+      </div>
+    </ion-label>
+  </ion-item>
+
+  <button ion-button class="btn_file">
+    <div align="center">
+      <label>+ Add a file attachment<input type="file" #fileInput class="hidethis" (change)="ImageUpload($event.target.files[0])">
+      </label>
+    </div>
+  </button>
+
+</ion-content>-->
+
+
+<ion-footer>
+  <button class="blue_button_edged" type='submit' ion-button>UPDATE</button>
+</ion-footer>
